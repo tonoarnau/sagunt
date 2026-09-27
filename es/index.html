@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sagunto, 219 a. C. · Aníbal — Crónicas de fuego</title>
+<meta name="description" content="Cortometrajes cinematográficos sobre Aníbal y la Segunda Guerra Púnica. Capítulo I: Sagunto, el asedio que encendió una guerra.">
+<meta property="og:title" content="Sagunto, 219 a. C. — El asedio que encendió una guerra">
+<meta property="og:description" content="Cortometrajes cinematográficos sobre Aníbal y la Segunda Guerra Púnica.">
+<meta property="og:image" content="../img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="ca_ES">
+<meta property="og:locale:alternate" content="en_GB">
+<link rel="alternate" hreflang="ca" href="https://tonoarnau.github.io/sagunt/">
+<link rel="alternate" hreflang="es" href="https://tonoarnau.github.io/sagunt/es/">
+<link rel="alternate" hreflang="en" href="https://tonoarnau.github.io/sagunt/en/">
+<link rel="alternate" hreflang="x-default" href="https://tonoarnau.github.io/sagunt/">
+<meta name="theme-color" content="#0d0907">
+<meta name="color-scheme" content="dark">
+<!-- LCP: precarga la imatge del hero en el format més lleuger que suporte el navegador -->
+<link rel="preload" as="image" type="image/avif" fetchpriority="high"
+      imagesrcset="../img/anibal-800.avif 800w, ../img/anibal-1200.avif 1200w, ../img/anibal-1920.avif 1920w, ../img/anibal-2560.avif 2560w, ../img/anibal-3200.avif 3200w"
+      imagesizes="max(108vw, 192vh)">
+<!-- Fonts: només els pesos que s'usen, càrrega no bloquejant -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Figtree:wght@400;500;600&family=JetBrains+Mono&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Figtree:wght@400;500;600&family=JetBrains+Mono&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Figtree:wght@400;500;600&family=JetBrains+Mono&display=swap"></noscript>
+<style>
+:root{
+  --bg:#0d0907;--bg2:#120c09;--card:#150e0a;--text:#f3e6d3;--title:#f7ecdc;--muted:#b5a58f;--dim:#8f7f6c;
+  --fire:#e8743b;--fire-2:#f0a36b;--line:rgba(243,230,211,.12);
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Figtree',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--fire-2);text-decoration:none}a:hover{color:#ffd2a8}
+img{display:block}
+.mono{font-family:var(--mono);letter-spacing:.24em;font-size:12px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.3em;color:var(--fire-2)}
+.wrap{max-width:1328px;margin:0 auto}
+.pad{padding-left:56px;padding-right:56px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Keyframes ---------- */
+@keyframes kenburns{0%{transform:scale(1.06)}100%{transform:scale(1.17) translate3d(-1.8%,-1.2%,0)}}
+@keyframes breathe{0%,100%{transform:none}50%{transform:scale(1.012) translateY(-.35%)}}
+@keyframes flicker{0%{opacity:.55}8%{opacity:.8}14%{opacity:.6}22%{opacity:.95}35%{opacity:.7}48%{opacity:.88}60%{opacity:.62}74%{opacity:.92}86%{opacity:.68}100%{opacity:.55}}
+@keyframes facelight{0%,100%{opacity:.35}30%{opacity:.6}55%{opacity:.4}78%{opacity:.7}}
+@keyframes sweep{0%{transform:translateX(-120%) skewX(-18deg)}60%,100%{transform:translateX(560%) skewX(-18deg)}}
+@keyframes rise{0%{transform:translate3d(0,0,0) scale(1);opacity:0}8%{opacity:1}70%{opacity:.85}100%{transform:translate3d(var(--dx),-105vh,0) scale(.35);opacity:0}}
+@keyframes grain{0%,100%{transform:translate(0,0)}20%{transform:translate(-4%,3%)}40%{transform:translate(3%,-5%)}60%{transform:translate(-2%,4%)}80%{transform:translate(5%,1%)}}
+@keyframes letterIn{0%{opacity:0;transform:translateY(60%) rotateX(70deg);filter:blur(8px)}100%{opacity:1;transform:none;filter:blur(0)}}
+@keyframes fadeUp{0%{opacity:0;transform:translateY(24px)}100%{opacity:1;transform:none}}
+@keyframes barsIn{to{transform:scaleY(0)}}
+@keyframes lineGrow{to{transform:scaleX(1)}}
+@keyframes scrollDot{0%{transform:translateY(0);opacity:1}80%{transform:translateY(22px);opacity:0}100%{opacity:0}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes pulseRing{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.9);opacity:0}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;height:100vh;height:100svh;min-height:640px;overflow:hidden;isolation:isolate}
+/* PERF: parallax aplicat per JS directament amb transform (sense variables CSS heretades → sense recàlcul d'estils de tot l'hero) */
+.hero__bg{position:absolute;inset:-4%;z-index:0;transition:transform 1.2s var(--ease);will-change:transform}
+.hero__bg>div,.hero__bg>div>div,.hero__bg>div>div>div,.hero__bg picture{position:absolute;inset:0}
+.kb{animation:kenburns 26s ease-in-out infinite alternate}
+.breathe{animation:breathe 6.5s ease-in-out infinite;transform-origin:52% 40%}
+.hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%;background:#1a0f0a}
+/* PERF: sense mix-blend-mode (forçava repintar tota la pantalla cada frame). Només opacitat i transform: animacions compostes per la GPU */
+.layer{position:absolute;inset:0;pointer-events:none}
+.fireglow{z-index:1;background:radial-gradient(40% 30% at 86% 52%,rgba(255,110,30,.32),transparent 70%),radial-gradient(30% 22% at 12% 60%,rgba(255,90,20,.24),transparent 70%);animation:flicker 3.4s steps(1,end) infinite,flicker 5.1s ease-in-out infinite reverse;will-change:opacity}
+.facelight{z-index:1;background:radial-gradient(16% 24% at 50% 30%,rgba(255,165,85,.20),transparent 70%);animation:facelight 4.2s ease-in-out infinite;will-change:opacity}
+.sweepwrap{z-index:2;overflow:hidden}
+.sweep{position:absolute;top:-10%;bottom:-10%;width:22%;background:linear-gradient(90deg,transparent,rgba(255,210,160,.07),transparent);animation:sweep 9s cubic-bezier(.6,0,.2,1) 2.2s infinite}
+.scrim{z-index:3;background:linear-gradient(180deg,rgba(13,9,7,.55) 0%,rgba(13,9,7,0) 22%,rgba(13,9,7,0) 45%,rgba(13,9,7,.82) 82%,var(--bg) 100%),linear-gradient(90deg,rgba(13,9,7,.75) 0%,rgba(13,9,7,.25) 38%,rgba(13,9,7,0) 60%)}
+.vignette{z-index:3;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.6) 100%)}
+.hero-dim{z-index:3;background:#0d0907;opacity:0}
+.embers{z-index:4;overflow:hidden}
+/* PERF: resplendor pintat amb gradient (una sola vegada) en lloc de box-shadow amb blur */
+.ember{position:absolute;bottom:-20px;border-radius:50%;background:radial-gradient(circle,#ffe0b8 0 22%,rgba(255,140,60,.75) 34%,rgba(255,90,20,.22) 55%,transparent 72%);animation:rise linear infinite;animation-timing-function:cubic-bezier(.3,.1,.6,1)}
+/* PERF: gra = textura PNG de 2,7 KB moguda amb transform (abans: filtre SVG feTurbulence animat a pantalla completa) */
+.grain{position:absolute;inset:-20%;z-index:5;pointer-events:none;background:url(../img/grain.png) repeat;animation:grain 1.1s steps(6) infinite}
+/* PERF: pausa tots els bucles infinits quan l'hero o la cinta no són visibles */
+.is-paused :is(.kb,.breathe,.fireglow,.facelight,.sweep,.ember,.grain,.playdot,.scrollcue span),.marquee.is-paused .marquee__track{animation-play-state:paused}
+.bar{position:absolute;left:0;right:0;height:50%;background:#000;z-index:20;animation:barsIn 1.1s cubic-bezier(.7,0,.2,1) .05s forwards}
+.bar--top{top:0;transform-origin:top}.bar--bot{bottom:0;transform-origin:bottom}
+
+.nav{position:absolute;top:0;left:0;right:0;z-index:10;padding-top:28px;padding-bottom:28px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:14px;color:var(--text)}
+.brand b{display:block;font-family:var(--serif);font-size:22px;letter-spacing:.14em;line-height:1.05}
+.brand small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.32em;color:#c9b69c}
+.nav-links{display:flex;gap:40px;font-size:14px;letter-spacing:.04em}
+.navlink{position:relative;color:var(--text)}
+.navlink::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--fire);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.navlink:hover::after{transform:scaleX(1);transform-origin:left}
+.side-text{position:absolute;right:44px;top:50%;z-index:10;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-family:var(--mono);font-size:11px;letter-spacing:.5em;color:rgba(243,230,211,.55)}
+
+.hero__copy{position:absolute;left:0;right:0;bottom:0;z-index:10;padding-bottom:72px}
+.hero__inner{max-width:820px;transition:transform 1.2s var(--ease)}
+/* la mida s'ajusta al nombre de lletres (--chars) perquè "Saguntum" càpia en mòbil */
+.hero h1{margin:14px 0 0;font-family:var(--serif);font-weight:600;white-space:nowrap;font-size:min(max(88px,13vw),210px,calc(min(100vw - 40px,820px) / (var(--chars,6) * .56)));line-height:.82;letter-spacing:-.02em;color:var(--title);perspective:800px;text-shadow:0 10px 60px rgba(0,0,0,.6)}
+.letter{display:inline-block;opacity:0;transform-origin:50% 100%;animation:letterIn 1.3s var(--ease) forwards}
+.subtitle{margin:18px 0 0;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(26px,2.6vw,38px);line-height:1.15}
+.rule{margin-top:26px;width:180px;height:1px;background:linear-gradient(90deg,var(--fire),transparent);transform-origin:left;transform:scaleX(0);animation:lineGrow 1.2s var(--ease) .8s forwards}
+.lead{margin:22px 0 0;max-width:520px;font-size:16px;line-height:1.65;color:#d6c6b0}
+.fade{opacity:0;animation:fadeUp 1s var(--ease) forwards}
+.cta-row{margin-top:34px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.meta{display:flex;gap:22px;margin-left:12px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:#c9b69c}
+.scrollcue{position:absolute;left:50%;bottom:26px;z-index:11;translate:-50% 0;width:26px;height:44px;border:1px solid rgba(243,230,211,.4);border-radius:14px;display:flex;justify-content:center;padding-top:8px}
+.scrollcue span{width:3px;height:8px;border-radius:2px;background:var(--fire);animation:scrollDot 1.8s ease-in-out infinite}
+
+/* ---------- Buttons ---------- */
+.btn{min-height:54px;border-radius:999px;font:500 15px var(--sans);display:inline-flex;align-items:center;gap:14px;cursor:pointer;transition:transform .35s var(--ease),box-shadow .35s,background .35s,border-color .35s}
+.btn:hover{transform:translateY(-2px)}
+.btn--fire{border:0;background:var(--fire);color:#140c08;font-weight:600;padding:0 30px}
+.btn--fire:hover{box-shadow:0 12px 40px -8px rgba(232,116,59,.7);background:#f28a4f;color:#140c08}
+.btn--play{padding-left:12px}
+.btn--ghost{border:1px solid rgba(243,230,211,.3);color:var(--text);padding:0 26px;background:rgba(20,12,8,.42)}
+.btn--ghost:hover{background:rgba(243,230,211,.12);border-color:rgba(243,230,211,.6);color:var(--text)}
+.btn--sm{min-height:44px;padding:0 20px;font-size:14px;gap:10px}
+.playdot{position:relative;width:34px;height:34px;border-radius:50%;background:#140c08;color:var(--fire);display:flex;align-items:center;justify-content:center}
+.playdot::before{content:'';position:absolute;inset:0;border-radius:50%;border:1px solid #140c08;animation:pulseRing 2.2s ease-out infinite}
+.glass{-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);background:rgba(20,12,8,.42)}
+:focus-visible{outline:2px solid var(--fire-2);outline-offset:3px}
+
+/* ---------- Marquee ---------- */
+.marquee{border-block:1px solid rgba(243,230,211,.1);padding:22px 0;overflow:hidden;white-space:nowrap;background:var(--bg2)}
+.marquee__track{display:inline-flex;gap:48px;font-family:var(--serif);font-size:34px;font-style:italic;color:#6e5c4a;animation:marquee 38s linear infinite}
+.marquee__track i{color:var(--fire);font-style:normal}
+
+/* ---------- Films ---------- */
+.section{padding-top:140px;padding-bottom:120px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:64px}
+h2{margin:16px 0 0;font-family:var(--serif);font-weight:600;font-size:clamp(48px,6vw,88px);line-height:.95;color:var(--title)}
+.sec-head p{margin:0;max-width:420px;font-size:16px;line-height:1.65;color:var(--muted)}
+.card{display:block;width:100%;padding:0;text-align:left;font:inherit;color:inherit;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card);cursor:pointer;transition:transform .6s var(--ease),border-color .4s,box-shadow .6s}
+.card:hover{transform:translateY(-6px);border-color:rgba(232,116,59,.55);box-shadow:0 30px 70px -30px rgba(232,116,59,.45)}
+.poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),filter .8s}
+.card:hover .poster{transform:scale(1.07)}
+.playbtn{position:absolute;border-radius:50%;border:1px solid rgba(243,230,211,.45);color:var(--text);display:flex;align-items:center;justify-content:center;transition:transform .5s var(--ease),background .4s,color .4s}
+.card:hover .playbtn{transform:scale(1.12);background:var(--fire);color:#140c08}
+.tag{position:absolute;left:16px;top:16px;padding:6px 10px;border-radius:7px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:#e9dcc8;border:1px solid rgba(243,230,211,.18)}
+.featured{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);border-radius:22px}
+.featured__media{position:relative;aspect-ratio:16/9;overflow:hidden}
+
+.featured__shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(21,14,10,0) 55%,rgba(21,14,10,.9) 100%),linear-gradient(0deg,rgba(0,0,0,.45),transparent 40%)}
+.featured__body{padding:48px 44px;display:flex;flex-direction:column;justify-content:space-between;gap:32px}
+.numeral{font-family:var(--serif);font-size:64px;line-height:1;color:var(--fire)}
+.pill{padding:6px 12px;border-radius:999px;background:rgba(232,116,59,.14);color:var(--fire-2);font-family:var(--mono);font-size:11px;letter-spacing:.16em}
+.card h3{margin:10px 0 0;font-family:var(--serif);font-weight:600;line-height:1.08;color:var(--title)}
+.card p{margin:12px 0 0;font-size:15px;line-height:1.7;color:var(--muted)}
+.credits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-top:24px;border-top:1px solid rgba(243,230,211,.1);font-size:13px}
+.credits span{display:block;color:var(--dim);font-family:var(--mono);font-size:10px;letter-spacing:.2em}
+.credits b{display:block;margin-top:6px;color:#e9dcc8;font-weight:500}
+.films-grid{margin-top:28px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.film__media{position:relative;aspect-ratio:16/10;overflow:hidden;background:#1c130e}
+.film__shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(21,14,10,.95) 0%,rgba(21,14,10,.2) 60%)}
+.film__num{position:absolute;right:18px;top:6px;font-family:var(--serif);font-size:96px;line-height:1;color:rgba(243,230,211,.14)}
+.film__body{padding:26px 26px 30px}
+
+/* ---------- Fotogrames (bento) ---------- */
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:clamp(150px,16vw,240px);gap:16px}
+.still{position:relative;padding:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#1c130e;cursor:zoom-in;color:var(--text);text-align:left;font:inherit;transition:border-color .4s,box-shadow .6s}
+.still picture,.still img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.still img{transition:transform 1.2s var(--ease)}
+.still:hover{border-color:rgba(232,116,59,.55);box-shadow:0 30px 70px -30px rgba(232,116,59,.45)}
+.still:hover img{transform:scale(1.05)}
+.still::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,9,7,.85),rgba(13,9,7,0) 50%);pointer-events:none}
+.still__cap{position:absolute;left:20px;right:20px;bottom:16px;z-index:1;font-family:var(--serif);font-size:24px;line-height:1.1;color:var(--title)}
+.still__cap small{display:block;margin-bottom:4px;font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:var(--fire-2)}
+.still--a{grid-column:span 4;grid-row:span 2}
+.still--a .still__cap{font-size:34px}
+.still--b,.still--c{grid-column:span 2}
+.still--d,.still--e{grid-column:span 3}
+.map{margin:56px 0 0}
+.map__btn{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#1c130e;cursor:zoom-in}
+.map img{width:100%;height:auto;transition:transform 1.2s var(--ease)}
+.map__btn:hover img{transform:scale(1.02)}
+.map figcaption{margin-top:14px;max-width:720px;font-size:14px;line-height:1.6;color:var(--muted)}
+.player.is-image{border:0;background:#000}
+.player.is-image img{opacity:1;object-fit:contain}
+.lb-nav{position:absolute;top:50%;z-index:2;width:48px;height:48px;margin-top:-24px;border-radius:50%;border:1px solid rgba(243,230,211,.35);background:rgba(13,9,7,.55);color:var(--text);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.lb-nav:hover{background:var(--fire);color:#140c08}
+.lb-prev{left:14px}.lb-next{right:14px}
+
+/* ---------- Setge / timeline / CTA ---------- */
+.setge{background:var(--bg2);border-top:1px solid rgba(243,230,211,.08);padding-top:120px;padding-bottom:120px}
+.quote{margin:20px 0 0;max-width:900px;font-family:var(--serif);font-weight:500;font-size:clamp(34px,3.6vw,54px);line-height:1.12}
+.quote em{color:var(--fire)}
+.facts{margin-top:72px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.fact{padding:32px;border:1px solid rgba(243,230,211,.1);border-radius:18px;background:#160f0b}
+.fact strong{display:block;font-family:var(--serif);font-size:72px;line-height:1;color:var(--fire);font-weight:500}
+.fact span{display:block;margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:#c9b69c}
+.fact p{margin:16px 0 0;font-size:15px;line-height:1.65;color:#a8987f}
+.timeline{position:relative;margin:64px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.timeline::before{content:'';position:absolute;left:0;right:0;top:9px;height:1px;background:linear-gradient(90deg,var(--fire),rgba(243,230,211,.15))}
+.dot{position:relative;display:block;width:19px;height:19px;border-radius:50%;background:var(--bg);border:1px solid var(--muted)}
+.dot--on{background:var(--fire);border:0;box-shadow:0 0 0 6px rgba(232,116,59,.18),0 0 24px rgba(232,116,59,.7)}
+.timeline b{display:block;margin-top:26px;font-family:var(--serif);font-size:40px;font-weight:500;color:var(--title)}
+.timeline span{display:block;margin-top:6px;font-size:15px;color:#e9dcc8}
+.timeline small{display:block;margin-top:4px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--dim)}
+.timeline li:first-child small{color:var(--fire-2)}
+.cta{position:relative;border-radius:28px;overflow:hidden;border:1px solid rgba(232,116,59,.3)}
+/* PERF: el desenfocament i l'enfosquiment ja venen "cuinats" a la imatge (5 KB), sense filter en temps real */
+.cta picture,.cta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 40%}
+.cta__shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,9,7,.95) 0%,rgba(13,9,7,.7) 55%,rgba(13,9,7,.35) 100%)}
+.cta__body{position:relative;padding:80px 64px;display:flex;flex-direction:column;gap:28px;max-width:720px}
+.cta h2{margin:0;font-size:clamp(40px,4.4vw,62px);line-height:1}
+.cta form{display:flex;gap:12px}
+.cta input{flex:1;min-height:56px;padding:0 22px;border-radius:999px;border:1px solid rgba(243,230,211,.25);background:rgba(13,9,7,.6);color:var(--text);font:400 15px var(--sans)}
+.cta input::placeholder{color:var(--dim)}
+.done{display:flex;align-items:center;gap:12px;min-height:56px;padding:0 20px;border-radius:999px;background:rgba(232,116,59,.16);color:#ffd2a8}
+footer{padding-top:40px;padding-bottom:56px;border-top:1px solid rgba(243,230,211,.08)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--dim)}
+
+
+/* ---------- Idiomes ---------- */
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang{display:flex;align-items:center;gap:2px;padding:4px;border-radius:999px;border:1px solid rgba(243,230,211,.22)}
+.lang a{min-width:44px;min-height:36px;padding:0 10px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:#d6c6b0;transition:background .3s,color .3s}
+.lang a:hover{color:var(--text);background:rgba(243,230,211,.1)}
+.lang a[aria-current="page"]{background:var(--fire);color:#140c08}
+.langtip{position:fixed;left:50%;bottom:20px;z-index:60;translate:-50% 0;display:flex;align-items:center;gap:12px;max-width:calc(100% - 32px);padding:10px 10px 10px 18px;border-radius:999px;border:1px solid rgba(243,230,211,.2);font-size:14px;color:var(--text);box-shadow:0 20px 50px -20px rgba(0,0,0,.8);animation:fadeUp .6s var(--ease)}
+.langtip a{min-height:40px;padding:0 16px;display:flex;align-items:center;border-radius:999px;background:var(--fire);color:#140c08;font-weight:600;white-space:nowrap}
+.langtip button{width:40px;height:40px;flex:none;border-radius:50%;border:0;background:transparent;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center}
+@media (max-width: 600px){
+  .nav-trailer{display:none}
+  .brand small{font-size:9px;letter-spacing:.16em}
+  .lang a{min-width:40px;padding:0 8px}
+  .langtip{left:16px;right:16px;bottom:16px;translate:none;border-radius:20px;padding:12px 8px 12px 16px}
+  .langtip span{flex:1;line-height:1.35}
+}
+
+/* ---------- Video dialog ---------- */
+dialog{width:min(1100px,calc(100% - 32px));max-width:none;padding:0;border:0;background:transparent;color:var(--text)}
+dialog::backdrop{background:rgba(5,3,2,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+dialog[open]{animation:fadeUp .6s var(--ease)}
+.dlg-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.dlg-close{width:48px;height:48px;border-radius:50%;border:1px solid rgba(243,230,211,.3);background:transparent;color:var(--text);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.player{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px dashed rgba(232,116,59,.5);background:#000;display:flex;align-items:center;justify-content:center;text-align:center}
+.player img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+.player video,.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* ---------- Scroll-driven (progressive enhancement) ---------- */
+@supports (animation-timeline: view()){
+  /* PERF: només transform + opacity durant el scroll (abans filter:blur/brightness → repintat a cada píxel desplaçat) */
+  @keyframes reveal{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+  .reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+  @keyframes heroOut{to{opacity:0;transform:translateY(-80px) scale(.97)}}
+  .hero-copy-scroll{animation:heroOut linear both;animation-timeline:scroll(root);animation-range:0 720px}
+  @keyframes imgOut{to{transform:scale(1.12)}}
+  .hero-img-scroll{animation:imgOut linear both;animation-timeline:scroll(root);animation-range:0 900px}
+  @keyframes dimIn{to{opacity:.55}}
+  .hero-dim{animation:dimIn linear both;animation-timeline:scroll(root);animation-range:0 900px}
+}
+/* PERF: el navegador no calcula layout ni pinta les seccions fora de pantalla fins que s'hi acosten */
+.cv{content-visibility:auto;contain-intrinsic-size:auto 900px}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;animation-delay:0s !important;transition:none !important}
+  .ember,.grain,.sweepwrap{display:none}
+  html{scroll-behavior:auto}
+}
+@media (max-width: 900px){
+  .pad{padding-left:20px;padding-right:20px}
+  .nav-links,.side-text,.meta{display:none}
+  .featured,.films-grid,.facts{grid-template-columns:minmax(0,1fr)}
+  .featured__body{padding:28px 24px}
+  .bento{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:86%;grid-auto-rows:auto;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-20px;padding:0 20px 8px;scroll-padding-inline:20px}
+  .still{grid-column:auto !important;grid-row:auto !important;aspect-ratio:4/3;scroll-snap-align:start}
+  .still--a .still__cap{font-size:24px}
+  .timeline{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:40px}
+  .timeline::before{display:none}
+  .cta__body{padding:48px 24px}
+  .cta form{flex-direction:column}
+  .hero__copy{padding-bottom:90px}
+  .section{padding-top:96px;padding-bottom:80px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="inici">
+  <div class="hero__bg" id="hero-bg">
+    <div class="hero-img-scroll"><div class="kb"><div class="breathe">
+      <picture>
+        <source type="image/avif" srcset="../img/anibal-800.avif 800w, ../img/anibal-1200.avif 1200w, ../img/anibal-1920.avif 1920w, ../img/anibal-2560.avif 2560w, ../img/anibal-3200.avif 3200w" sizes="max(108vw, 192vh)">
+        <source type="image/webp" srcset="../img/anibal-800.webp 800w, ../img/anibal-1200.webp 1200w, ../img/anibal-1920.webp 1920w, ../img/anibal-2560.webp 2560w, ../img/anibal-3200.webp 3200w" sizes="max(108vw, 192vh)">
+        <img class="hero__img" src="../img/anibal-1920.jpg" srcset="../img/anibal-800.jpg 800w, ../img/anibal-1200.jpg 1200w, ../img/anibal-1920.jpg 1920w" sizes="max(108vw, 192vh)" width="1920" height="1080" fetchpriority="high" alt="Aníbal, con capa roja y armadura de escamas, ante el campo de Sagunto en llamas">
+      </picture>
+    </div></div></div>
+  </div>
+  <div class="layer fireglow"></div>
+  <div class="layer facelight"></div>
+  <div class="layer sweepwrap"><div class="sweep"></div></div>
+  <div class="layer scrim"></div>
+  <div class="layer vignette"></div>
+  <div class="layer hero-dim"></div>
+  <div class="layer embers" id="embers" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="bar bar--top"></div><div class="bar bar--bot"></div>
+
+  <header class="nav pad fade" style="animation-delay:0.75s">
+    <a class="brand" href="#inici">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true"><circle cx="17" cy="17" r="15.5" stroke="#e8743b" stroke-width="1.2"/><path d="M17 7 L22 17 L17 27 L12 17 Z" stroke="#f3e6d3" stroke-width="1.2"/><circle cx="17" cy="17" r="2" fill="#e8743b"/></svg>
+      <span><b>ANÍBAL</b><small>CRÓNICAS DE FUEGO</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a class="navlink" href="#curts">Los cortos</a>
+      <a class="navlink" href="#fotogrames">Fotogramas</a>
+      <a class="navlink" href="#setge">El asedio</a>
+      <a class="navlink" href="#cronologia">Cronología</a>
+      <a class="navlink" href="#avisos">Estreno</a>
+    </nav>
+    <div class="nav-right">
+      <nav class="lang" aria-label="Idioma · Language"><a href="../" hreflang="ca" lang="ca" data-lang="ca" aria-label="Valencià">VAL</a><a href="../es/" hreflang="es" lang="es" data-lang="es" aria-label="Castellano" aria-current="page">ES</a><a href="../en/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a></nav>
+      <button class="btn btn--ghost btn--sm glass nav-trailer" data-play="I" type="button">
+        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1 L11 6 L2 11 Z" fill="currentColor"/></svg>Tráiler
+      </button>
+    </div>
+  </header>
+
+  <div class="side-text fade" aria-hidden="true" style="animation-delay:1.20s">SAGVNTVM · 219 a. C.</div>
+
+  <div class="hero__copy pad">
+    <div class="hero-copy-scroll"><div class="hero__inner">
+      <div class="kicker fade" style="display:flex;align-items:center;gap:16px;animation-delay:0.65s">
+        <span>CAPÍTULO I</span><span style="width:40px;height:1px;background:var(--fire)"></span><span>219 a. C.</span>
+      </div>
+      <h1 aria-label="Sagunto" style="--chars:7"><span class="letter" aria-hidden="true" style="animation-delay:0.55s">S</span><span class="letter" aria-hidden="true" style="animation-delay:0.59s">a</span><span class="letter" aria-hidden="true" style="animation-delay:0.63s">g</span><span class="letter" aria-hidden="true" style="animation-delay:0.67s">u</span><span class="letter" aria-hidden="true" style="animation-delay:0.71s">n</span><span class="letter" aria-hidden="true" style="animation-delay:0.75s">t</span><span class="letter" aria-hidden="true" style="animation-delay:0.79s">o</span></h1>
+      <p class="subtitle fade" style="animation-delay:0.95s">El asedio que encendió una guerra</p>
+      <div class="rule"></div>
+      <p class="lead fade" style="animation-delay:1.05s">Una ciudad íbera aliada de Roma. Un general cartaginés de veintiséis años. Ocho meses de asedio que cambiarían el destino del Mediterráneo.</p>
+      <div class="cta-row fade" style="animation-delay:1.15s">
+        <button class="btn btn--fire btn--play" data-play="I" type="button">
+          <span class="playdot"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1 L11 6 L2 11 Z" fill="currentColor"/></svg></span>Ver el corto
+        </button>
+        <a class="btn btn--ghost glass" href="#curts">Todos los capítulos</a>
+        <div class="meta"><span>[DURACIÓN]</span><span>·</span><span>V.O. VALENCIANO · SUBT. ES/EN</span></div>
+      </div>
+    </div></div>
+  </div>
+
+  <a href="#curts" class="scrollcue fade" aria-label="Bajar a los cortos" style="animation-delay:1.40s"><span></span></a>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Sagunto</span><i>✦</i><span>Los Alpes</span><i>✦</i><span>Trasimeno</span><i>✦</i><span>Cannas</span><i>✦</i><span>Zama</span><i>✦</i>
+    <span>Sagunto</span><i>✦</i><span>Los Alpes</span><i>✦</i><span>Trasimeno</span><i>✦</i><span>Cannas</span><i>✦</i><span>Zama</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ================= ELS CURTS ================= -->
+<section id="curts" class="section pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="kicker">LA SERIE · 4 CAPÍTULOS</div><h2>Cortometrajes cinematográficos</h2></div>
+      <p>Cada capítulo, un momento decisivo de la Segunda Guerra Púnica, rodado como una pieza de cine breve.</p>
+    </div>
+
+    <button type="button" class="card featured reveal" data-play="I" aria-label="Reproducir capítulo I, Sagunto">
+      <div class="featured__media">
+        <picture><source type="image/avif" srcset="../img/s-ordre-640.avif 640w, ../img/s-ordre-1080.avif 1080w, ../img/s-ordre-1600.avif 1600w, ../img/s-ordre-2560.avif 2560w" sizes="(max-width: 900px) 100vw, 62vw"><source type="image/webp" srcset="../img/s-ordre-640.webp 640w, ../img/s-ordre-1080.webp 1080w, ../img/s-ordre-1600.webp 1600w, ../img/s-ordre-2560.webp 2560w" sizes="(max-width: 900px) 100vw, 62vw"><img class="poster" src="../img/s-ordre-1600.jpg" srcset="../img/s-ordre-640.jpg 640w, ../img/s-ordre-1080.jpg 1080w, ../img/s-ordre-1600.jpg 1600w" sizes="(max-width: 900px) 100vw, 62vw" width="1920" height="1080" alt="" loading="lazy" decoding="async" style="object-position:35% 40%"></picture>
+        <div class="featured__shade"></div>
+        <div class="tag glass">[VÍDEO 16:9 · PLACEHOLDER]</div>
+        <span class="playbtn glass" style="left:50%;top:50%;margin:-44px 0 0 -44px;width:88px;height:88px"><svg width="22" height="22" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5 L11 6 L3 10.5 Z" fill="currentColor"/></svg></span>
+        <div style="position:absolute;left:20px;bottom:20px;font-family:var(--mono);font-size:12px">00:00 / [DURACIÓN]</div>
+      </div>
+      <div class="featured__body">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px"><span class="numeral">I</span><span class="pill">ESTRENO · [FECHA]</span></div>
+          <div class="mono" style="margin-top:22px;color:#c9b69c">219 a. C. — SAGUNTO</div>
+          <h3 style="font-size:40px">El asedio que encendió una guerra</h3>
+          <p>Aníbal asedia la ciudad íbera mientras Roma envía embajadores y no ejércitos. Cuando Sagunto cae, ya no hay vuelta atrás.</p>
+        </div>
+        <div class="credits">
+          <div><span>DIRECCIÓN</span><b>[NOMBRE]</b></div>
+          <div><span>DURACIÓN</span><b>[MIN]</b></div>
+          <div><span>IDIOMA</span><b>Valenciano</b></div>
+        </div>
+      </div>
+    </button>
+
+    <div class="films-grid">
+      <button type="button" class="card reveal" data-play="II" aria-label="Reproducir capítulo II, Los Alpes">
+        <div class="film__media">
+          <picture><source type="image/avif" srcset="../img/film-2-600.avif 600w, ../img/film-2-1000.avif 1000w" sizes="(max-width: 900px) 112vw, 37vw"><source type="image/webp" srcset="../img/film-2-600.webp 600w, ../img/film-2-1000.webp 1000w" sizes="(max-width: 900px) 112vw, 37vw"><img class="poster" src="../img/film-2-1000.jpg" srcset="../img/film-2-600.jpg 600w, ../img/film-2-1000.jpg 1000w" sizes="(max-width: 900px) 112vw, 37vw" width="1000" height="563" alt="" loading="lazy" decoding="async" style="object-position:85% 40%"></picture>
+          <div class="film__shade"></div><div class="film__num">II</div><div class="tag glass">PRÓXIMAMENTE</div>
+          <span class="playbtn glass" style="left:18px;bottom:18px;width:52px;height:52px"><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5 L11 6 L3 10.5 Z" fill="currentColor"/></svg></span>
+        </div>
+        <div class="film__body"><div class="kicker" style="font-size:11px;letter-spacing:.24em">218 a. C. — LOS ALPES</div><h3 style="font-size:30px">[TÍTULO DEL CAPÍTULO II]</h3><p>Elefantes, nieve y un ejército entero cruzando lo imposible hacia Italia.</p></div>
+      </button>
+      <button type="button" class="card reveal" data-play="III" aria-label="Reproducir capítulo III, Cannas">
+        <div class="film__media">
+          <picture><source type="image/avif" srcset="../img/film-3-600.avif 600w, ../img/film-3-1000.avif 1000w" sizes="(max-width: 900px) 112vw, 37vw"><source type="image/webp" srcset="../img/film-3-600.webp 600w, ../img/film-3-1000.webp 1000w" sizes="(max-width: 900px) 112vw, 37vw"><img class="poster" src="../img/film-3-1000.jpg" srcset="../img/film-3-600.jpg 600w, ../img/film-3-1000.jpg 1000w" sizes="(max-width: 900px) 112vw, 37vw" width="1000" height="563" alt="" loading="lazy" decoding="async" style="object-position:10% 60%"></picture>
+          <div class="film__shade"></div><div class="film__num">III</div><div class="tag glass">PRÓXIMAMENTE</div>
+          <span class="playbtn glass" style="left:18px;bottom:18px;width:52px;height:52px"><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5 L11 6 L3 10.5 Z" fill="currentColor"/></svg></span>
+        </div>
+        <div class="film__body"><div class="kicker" style="font-size:11px;letter-spacing:.24em">216 a. C. — CANNAS</div><h3 style="font-size:30px">[TÍTULO DEL CAPÍTULO III]</h3><p>El cerco perfecto y la peor derrota de la historia de Roma.</p></div>
+      </button>
+      <button type="button" class="card reveal" data-play="IV" aria-label="Reproducir capítulo IV, Zama">
+        <div class="film__media">
+          <picture><source type="image/avif" srcset="../img/film-4-600.avif 600w, ../img/film-4-1000.avif 1000w" sizes="(max-width: 900px) 112vw, 37vw"><source type="image/webp" srcset="../img/film-4-600.webp 600w, ../img/film-4-1000.webp 1000w" sizes="(max-width: 900px) 112vw, 37vw"><img class="poster" src="../img/film-4-1000.jpg" srcset="../img/film-4-600.jpg 600w, ../img/film-4-1000.jpg 1000w" sizes="(max-width: 900px) 112vw, 37vw" width="1000" height="563" alt="" loading="lazy" decoding="async" style="object-position:70% 85%"></picture>
+          <div class="film__shade"></div><div class="film__num">IV</div><div class="tag glass">PRÓXIMAMENTE</div>
+          <span class="playbtn glass" style="left:18px;bottom:18px;width:52px;height:52px"><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5 L11 6 L3 10.5 Z" fill="currentColor"/></svg></span>
+        </div>
+        <div class="film__body"><div class="kicker" style="font-size:11px;letter-spacing:.24em">202 a. C. — ZAMA</div><h3 style="font-size:30px">[TÍTULO DEL CAPÍTULO IV]</h3><p>Años después, en África, Escipión espera a Aníbal para el último acto.</p></div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOTOGRAMES ================= -->
+<section id="fotogrames" class="section pad cv" style="padding-top:0;contain-intrinsic-size:auto 1100px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><div class="kicker">FOTOGRAMAS · CAPÍTULO I</div><h2>Dentro del asedio</h2></div>
+      <p>Cinco momentos del corto. Toca una imagen para verla a pantalla completa.</p>
+    </div>
+    <div class="bento">
+      <button type="button" class="still still--a reveal" data-still="0" aria-label="Ampliar fotograma 01: Las torres de asedio"><picture><source type="image/avif" srcset="../img/s-setge-640.avif 640w, ../img/s-setge-1080.avif 1080w, ../img/s-setge-1600.avif 1600w, ../img/s-setge-2560.avif 2560w" sizes="(max-width: 900px) 86vw, 62vw"><source type="image/webp" srcset="../img/s-setge-640.webp 640w, ../img/s-setge-1080.webp 1080w, ../img/s-setge-1600.webp 1600w, ../img/s-setge-2560.webp 2560w" sizes="(max-width: 900px) 86vw, 62vw"><img src="../img/s-setge-1600.jpg" srcset="../img/s-setge-640.jpg 640w, ../img/s-setge-1080.jpg 1080w, ../img/s-setge-1600.jpg 1600w" sizes="(max-width: 900px) 86vw, 62vw" width="1920" height="1080" alt="" loading="lazy" decoding="async"></picture><span class="still__cap"><small>01</small>Las torres de asedio</span></button>
+      <button type="button" class="still still--b reveal" data-still="1" aria-label="Ampliar fotograma 02: La muralla cede"><picture><source type="image/avif" srcset="../img/s-bretxa-640.avif 640w, ../img/s-bretxa-1080.avif 1080w, ../img/s-bretxa-1600.avif 1600w, ../img/s-bretxa-2560.avif 2560w" sizes="(max-width: 900px) 86vw, 31vw"><source type="image/webp" srcset="../img/s-bretxa-640.webp 640w, ../img/s-bretxa-1080.webp 1080w, ../img/s-bretxa-1600.webp 1600w, ../img/s-bretxa-2560.webp 2560w" sizes="(max-width: 900px) 86vw, 31vw"><img src="../img/s-bretxa-1600.jpg" srcset="../img/s-bretxa-640.jpg 640w, ../img/s-bretxa-1080.jpg 1080w, ../img/s-bretxa-1600.jpg 1600w" sizes="(max-width: 900px) 86vw, 31vw" width="1920" height="1080" alt="" loading="lazy" decoding="async"></picture><span class="still__cap"><small>02</small>La muralla cede</span></button>
+      <button type="button" class="still still--c reveal" data-still="2" aria-label="Ampliar fotograma 03: El asalto"><picture><source type="image/avif" srcset="../img/s-assalt-640.avif 640w, ../img/s-assalt-1080.avif 1080w, ../img/s-assalt-1600.avif 1600w, ../img/s-assalt-2560.avif 2560w" sizes="(max-width: 900px) 86vw, 31vw"><source type="image/webp" srcset="../img/s-assalt-640.webp 640w, ../img/s-assalt-1080.webp 1080w, ../img/s-assalt-1600.webp 1600w, ../img/s-assalt-2560.webp 2560w" sizes="(max-width: 900px) 86vw, 31vw"><img src="../img/s-assalt-1600.jpg" srcset="../img/s-assalt-640.jpg 640w, ../img/s-assalt-1080.jpg 1080w, ../img/s-assalt-1600.jpg 1600w" sizes="(max-width: 900px) 86vw, 31vw" width="1920" height="1080" alt="" loading="lazy" decoding="async"></picture><span class="still__cap"><small>03</small>El asalto</span></button>
+      <button type="button" class="still still--d reveal" data-still="3" aria-label="Ampliar fotograma 04: El consejo"><picture><source type="image/avif" srcset="../img/s-consell-640.avif 640w, ../img/s-consell-1080.avif 1080w, ../img/s-consell-1600.avif 1600w, ../img/s-consell-2560.avif 2560w" sizes="(max-width: 900px) 86vw, 46vw"><source type="image/webp" srcset="../img/s-consell-640.webp 640w, ../img/s-consell-1080.webp 1080w, ../img/s-consell-1600.webp 1600w, ../img/s-consell-2560.webp 2560w" sizes="(max-width: 900px) 86vw, 46vw"><img src="../img/s-consell-1600.jpg" srcset="../img/s-consell-640.jpg 640w, ../img/s-consell-1080.jpg 1080w, ../img/s-consell-1600.jpg 1600w" sizes="(max-width: 900px) 86vw, 46vw" width="1920" height="1080" alt="" loading="lazy" decoding="async"></picture><span class="still__cap"><small>04</small>El consejo</span></button>
+      <button type="button" class="still still--e reveal" data-still="4" aria-label="Ampliar fotograma 05: La orden"><picture><source type="image/avif" srcset="../img/s-ordre-640.avif 640w, ../img/s-ordre-1080.avif 1080w, ../img/s-ordre-1600.avif 1600w, ../img/s-ordre-2560.avif 2560w" sizes="(max-width: 900px) 86vw, 46vw"><source type="image/webp" srcset="../img/s-ordre-640.webp 640w, ../img/s-ordre-1080.webp 1080w, ../img/s-ordre-1600.webp 1600w, ../img/s-ordre-2560.webp 2560w" sizes="(max-width: 900px) 86vw, 46vw"><img src="../img/s-ordre-1600.jpg" srcset="../img/s-ordre-640.jpg 640w, ../img/s-ordre-1080.jpg 1080w, ../img/s-ordre-1600.jpg 1600w" sizes="(max-width: 900px) 86vw, 46vw" width="1920" height="1080" alt="" loading="lazy" decoding="async"></picture><span class="still__cap"><small>05</small>La orden</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EL SETGE ================= -->
+<section id="setge" class="setge pad cv">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="kicker">CONTEXTO HISTÓRICO</div>
+      <p class="quote">Sagunto no era la guerra. <em>Era la chispa.</em> Su caída dio a Roma el motivo para declarar la Segunda Guerra Púnica.</p>
+    </div>
+    <figure class="map reveal">
+      <button type="button" class="map__btn" data-still="5" aria-label="Ampliar el mapa de Hispania en el 219 a. C."><picture><source type="image/avif" srcset="../img/mapa-800.avif 800w, ../img/mapa-1400.avif 1400w, ../img/mapa-2400.avif 2400w" sizes="(max-width: 1400px) 100vw, 1328px"><source type="image/webp" srcset="../img/mapa-800.webp 800w, ../img/mapa-1400.webp 1400w, ../img/mapa-2400.webp 2400w" sizes="(max-width: 1400px) 100vw, 1328px"><img src="../img/mapa-1400.jpg" srcset="../img/mapa-800.jpg 800w, ../img/mapa-1400.jpg 1400w" sizes="(max-width: 1400px) 100vw, 1328px" width="1920" height="1080" alt="" loading="lazy" decoding="async"></picture></button>
+      <figcaption>Sagunto quedaba al sur del Ebro, dentro de la zona de influencia cartaginesa, pero era aliada de Roma. Atacarla era desafiar a Roma.</figcaption>
+    </figure>
+    <div class="facts">
+      <div class="fact reveal"><strong>8</strong><span>MESES DE ASEDIO</span><p>La ciudad resistió desde la primavera hasta finales del 219 a. C. sin recibir ayuda de Roma.</p></div>
+      <div class="fact reveal"><strong>26</strong><span>AÑOS TENÍA ANÍBAL</span><p>Llevaba solo dos años al mando del ejército cartaginés en Hispania cuando inició el asedio.</p></div>
+      <div class="fact reveal"><strong>17</strong><span>AÑOS DE GUERRA</span><p>De Sagunto a Zama: el conflicto que decidió quién dominaría el Mediterráneo occidental.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CRONOLOGIA ================= -->
+<section id="cronologia" class="pad cv" style="padding-top:120px;padding-bottom:120px">
+  <div class="wrap">
+    <h2 class="reveal" style="margin:0;font-size:clamp(40px,4.6vw,64px)">Cronología de la saga</h2>
+    <ol class="timeline reveal">
+      <li><i class="dot dot--on"></i><b>219 a. C.</b><span>Asedio de Sagunto</span><small>CAPÍTULO I</small></li>
+      <li><i class="dot"></i><b>218 a. C.</b><span>Travesía de los Alpes</span><small>CAPÍTULO II</small></li>
+      <li><i class="dot"></i><b>216 a. C.</b><span>Batalla de Cannas</span><small>CAPÍTULO III</small></li>
+      <li><i class="dot"></i><b>202 a. C.</b><span>Batalla de Zama</span><small>CAPÍTULO IV</small></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section id="avisos" class="pad cv" style="padding-top:40px;padding-bottom:120px">
+  <div class="wrap cta reveal">
+    <picture><source type="image/webp" srcset="../img/cta-1000.webp"><img src="../img/cta-1000.jpg" width="1000" height="563" alt="" loading="lazy" decoding="async"></picture>
+    <div class="cta__shade"></div>
+    <div class="cta__body">
+      <h2>Que el fuego no te pille desprevenido.</h2>
+      <p style="margin:0;font-size:16px;line-height:1.65;color:#d6c6b0">Te avisamos cuando se estrene cada capítulo. Ningún correo más.</p>
+      <form id="notify">
+        <label for="email" class="sr-only">Correo electrónico</label>
+        <input id="email" name="email" type="email" required placeholder="tu@correo.es" autocomplete="email">
+        <button type="submit" class="btn btn--fire">Avísame</button>
+      </form>
+      <div class="done" id="done" role="status" hidden>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9.5 L7.5 14 L15 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Hecho. Te avisaremos cuando caiga Sagunto.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="pad cv" style="contain-intrinsic-size:auto 160px">
+  <div class="wrap">
+    <span style="font-family:var(--serif);font-size:20px;letter-spacing:.14em;color:#c9b69c">ANÍBAL · CRÓNICAS DE FUEGO</span>
+    <nav aria-label="Redes" style="display:flex;gap:28px">
+      <a class="navlink" href="#" style="color:var(--muted)">[INSTAGRAM]</a>
+      <a class="navlink" href="#" style="color:var(--muted)">[YOUTUBE]</a>
+      <a class="navlink" href="#" style="color:var(--muted)">[CONTACTO]</a>
+    </nav>
+    <span>© <span id="year"></span> [PRODUCTORA]</span>
+  </div>
+</footer>
+
+<!-- ================= VIDEO DIALOG ================= -->
+<dialog id="player" aria-labelledby="dlg-title">
+  <div class="dlg-head">
+    <div>
+      <div class="kicker" id="dlg-meta" style="font-size:11px;letter-spacing:.24em"></div>
+      <div id="dlg-title" style="margin-top:6px;font-family:var(--serif);font-size:30px;color:var(--title)"></div>
+    </div>
+    <button class="dlg-close" type="button" aria-label="Cerrar" data-close>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3 L13 13 M13 3 L3 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="player" id="player-box"></div>
+</dialog>
+
+<script>
+/* =========================================================
+   VÍDEOS — posa aquí l'enllaç de cada curt quan el tingues.
+   Accepta: fitxer .mp4 (p. ex. "videos/sagunt.mp4"),
+   un embed de YouTube ("https://www.youtube.com/embed/ID")
+   o de Vimeo ("https://player.vimeo.com/video/ID").
+   Deixa-ho buit ("") per a mostrar el placeholder.
+   ========================================================= */
+const FILMS = {
+  I:   { meta: 'CAPÍTULO I · 219 a. C. — SAGUNTO', title: 'El asedio que encendió una guerra', src: '' },
+  II:  { meta: 'CAPÍTULO II · 218 a. C. — LOS ALPES', title: '[TÍTULO DEL CAPÍTULO II]', src: '' },
+  III: { meta: 'CAPÍTULO III · 216 a. C. — CANNAS', title: '[TÍTULO DEL CAPÍTULO III]', src: '' },
+  IV:  { meta: 'CAPÍTULO IV · 202 a. C. — ZAMA', title: '[TÍTULO DEL CAPÍTULO IV]', src: '' }
+};
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Brases */
+(() => {
+  if (reduce) return;
+  const box = document.getElementById('embers');
+  // PERF: menys brases en pantalles petites i en dispositius amb poca memòria/CPU
+  const low = (navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory || 8) <= 4;
+  const n = innerWidth < 700 ? (low ? 12 : 18) : (low ? 24 : 34);
+  let seed = 219;
+  const rnd = () => (seed = (seed * 16807) % 2147483647, (seed - 1) / 2147483646);
+  const frag = document.createDocumentFragment();
+  for (let i = 0; i < n; i++) {
+    const s = (5 + rnd() * 10).toFixed(1); // inclou el halo del gradient
+    const e = document.createElement('span');
+    e.className = 'ember';
+    e.style.cssText = `left:${(rnd()*100).toFixed(2)}%;width:${s}px;height:${s}px;animation-duration:${(7+rnd()*10).toFixed(2)}s;animation-delay:${(-rnd()*16).toFixed(2)}s;--dx:${Math.round((rnd()-.5)*260)}px;opacity:${(.55+rnd()*.45).toFixed(2)}`;
+    frag.appendChild(e);
+  }
+  box.appendChild(frag);
+})();
+
+/* Parallax amb el ratolí */
+(() => {
+  if (reduce || !matchMedia('(pointer: fine)').matches) return;
+  const hero = document.querySelector('.hero');
+  const bg = document.getElementById('hero-bg');
+  const fg = document.querySelector('.hero__inner');
+  const P = 18;
+  let raf = 0, rect = hero.getBoundingClientRect();
+  // PERF: el rect es llig una vegada (i en resize), no a cada moviment → sense layouts forçats
+  addEventListener('resize', () => { rect = hero.getBoundingClientRect(); }, { passive: true });
+  const apply = (x, y) => {
+    bg.style.transform = `translate3d(${(-x * P).toFixed(1)}px,${(-y * P).toFixed(1)}px,0)`;
+    fg.style.transform = `translate3d(${(x * P * .45).toFixed(1)}px,${(y * P * .45).toFixed(1)}px,0)`;
+  };
+  let lx = 0, ly = 0;
+  hero.addEventListener('pointermove', (ev) => {
+    lx = ev.clientX; ly = ev.clientY;
+    if (raf) return; // una actualització per frame com a màxim
+    raf = requestAnimationFrame(() => {
+      raf = 0;
+      apply((lx - rect.left) / rect.width - .5, (ly - rect.top) / rect.height - .5);
+    });
+  }, { passive: true });
+  hero.addEventListener('pointerleave', () => apply(0, 0), { passive: true });
+})();
+
+/* PERF: pausa les animacions infinites quan no es veuen */
+(() => {
+  if (!('IntersectionObserver' in window)) return;
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) e.target.classList.toggle('is-paused', !e.isIntersecting);
+  }, { rootMargin: '100px 0px' });
+  io.observe(document.querySelector('.hero'));
+  io.observe(document.querySelector('.marquee'));
+})();
+
+/* Reproductor */
+(() => {
+  const dlg = document.getElementById('player');
+  const box = document.getElementById('player-box');
+  const esc = (s) => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  function open(id) {
+    const f = FILMS[id]; if (!f) return;
+    document.getElementById('dlg-meta').textContent = f.meta;
+    document.getElementById('dlg-title').textContent = f.title;
+    if (!f.src) {
+      box.innerHTML = '<img src="../img/cta-1000.jpg" alt=""><div style="position:relative"><div class="mono" style="font-size:13px">[INSERTAR VÍDEO]</div><div style="margin-top:10px;font-size:14px;color:var(--muted)">Placeholder del reproductor 16:9</div></div>';
+    } else if (/\.(mp4|webm|mov)(\?|$)/i.test(f.src)) {
+      box.innerHTML = `<video src="${esc(f.src)}" controls autoplay playsinline poster="../img/anibal-1920.jpg"></video>`;
+    } else {
+      box.innerHTML = `<iframe src="${esc(f.src)}" title="${esc(f.title)}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+    }
+    box.classList.remove('is-image');
+    dlg.showModal();
+  }
+  document.querySelectorAll('[data-play]').forEach(b => b.addEventListener('click', () => open(b.dataset.play)));
+
+  /* Visor de fotogrames: només es descarrega la resolució gran quan s'obri */
+  const STILLS = [
+    { img: 's-setge',   title: 'Las torres de asedio', meta: 'FOTOGRAMA 01 · CAPÍTULO I' },
+    { img: 's-bretxa',  title: 'La muralla cede',   meta: 'FOTOGRAMA 02 · CAPÍTULO I' },
+    { img: 's-assalt',  title: "El asalto",            meta: 'FOTOGRAMA 03 · CAPÍTULO I' },
+    { img: 's-consell', title: 'El consejo',          meta: 'FOTOGRAMA 04 · CAPÍTULO I' },
+    { img: 's-ordre',   title: "La orden",             meta: 'FOTOGRAMA 05 · CAPÍTULO I' },
+    { img: 'mapa',      title: 'Hispania, 219 a. C.',    meta: 'CONTEXTO HISTÓRICO', w: [800, 1400, 2400] }
+  ];
+  let cur = -1;
+  const arrow = (d) => `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="${d}" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  function show(i) {
+    const n = STILLS.length - 1; // el mapa no entra en el carrusel de fotogrames
+    cur = STILLS[i].img === 'mapa' ? i : (i + n) % n;
+    const s = STILLS[cur], w = s.w || [640, 1080, 1600, 2560];
+    const set = (ext) => w.map(x => `../img/${s.img}-${x}.${ext} ${x}w`).join(', ');
+    document.getElementById('dlg-meta').textContent = s.meta;
+    document.getElementById('dlg-title').textContent = s.title;
+    const nav = s.img === 'mapa' ? '' :
+      `<button type="button" class="lb-nav lb-prev" aria-label="Fotograma anterior">${arrow('M10 3 L5 8 L10 13')}</button>` +
+      `<button type="button" class="lb-nav lb-next" aria-label="Fotograma siguiente">${arrow('M6 3 L11 8 L6 13')}</button>`;
+    box.innerHTML = `<picture><source type="image/avif" srcset="${set('avif')}" sizes="min(1100px, 100vw)"><source type="image/webp" srcset="${set('webp')}" sizes="min(1100px, 100vw)"><img src="../img/${s.img}-${w[w.length > 3 ? 2 : 1]}.jpg" alt="${s.title}"></picture>${nav}`;
+    box.classList.add('is-image');
+    const p = box.querySelector('.lb-prev'), q = box.querySelector('.lb-next');
+    if (p) p.addEventListener('click', () => show(cur - 1));
+    if (q) q.addEventListener('click', () => show(cur + 1));
+    if (!dlg.open) dlg.showModal();
+  }
+  document.querySelectorAll('[data-still]').forEach(b => b.addEventListener('click', () => show(+b.dataset.still)));
+  dlg.addEventListener('keydown', (e) => {
+    if (!box.classList.contains('is-image') || STILLS[cur].img === 'mapa') return;
+    if (e.key === 'ArrowRight') show(cur + 1);
+    if (e.key === 'ArrowLeft') show(cur - 1);
+  });
+
+  dlg.querySelector('[data-close]').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('close', () => { box.innerHTML = ''; box.classList.remove('is-image'); });
+})();
+
+/* Idioma: recorda l'elecció i suggereix (sense redirigir) la versió del navegador */
+(() => {
+  const PAGE = 'es', TIPS = {'ca': {'msg': 'Aquesta pàgina també està en valencià', 'cta': 'Valencià', 'href': '../'}, 'en': {'msg': 'This page is also available in English', 'cta': 'English', 'href': '../en/'}};
+  const get = () => { try { return localStorage.getItem('lang'); } catch (e) { return null; } };
+  const set = (v) => { try { localStorage.setItem('lang', v); } catch (e) {} };
+  document.querySelectorAll('.lang a').forEach(a => a.addEventListener('click', () => set(a.dataset.lang)));
+  if (get()) return;
+  const pref = (navigator.languages || [navigator.language || '']).map(l => l.toLowerCase().slice(0, 2));
+  const want = pref.find(l => l === 'ca' || l === 'es' || l === 'en') || 'en';
+  if (want === PAGE || !TIPS[want]) return;
+  const t = TIPS[want];
+  const el = document.createElement('div');
+  el.className = 'langtip glass'; el.setAttribute('role', 'status'); el.lang = want;
+  el.innerHTML = `<span></span><a></a><button type="button" aria-label="×"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3 L13 13 M13 3 L3 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>`;
+  el.querySelector('span').textContent = t.msg;
+  const a = el.querySelector('a'); a.textContent = t.cta; a.href = t.href; a.hreflang = want;
+  a.addEventListener('click', () => set(want));
+  el.querySelector('button').addEventListener('click', () => { set(PAGE); el.remove(); });
+  setTimeout(() => document.body.appendChild(el), 2500);
+})();
+
+/* Formulari d'avisos (connecta'l a Formspree, Mailchimp, etc.) */
+document.getElementById('notify').addEventListener('submit', (e) => {
+  e.preventDefault();
+  e.target.hidden = true;
+  document.getElementById('done').hidden = false;
+});
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
