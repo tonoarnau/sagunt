@@ -54,7 +54,7 @@ TR = [
     ("CRÒNIQUES DE FOC", "CRÓNICAS DE FUEGO", "CHRONICLES OF FIRE"),
     # Hero
     ("El setge que va encendre una guerra", "El asedio que encendió una guerra", "The siege that ignited a war"),
-    ("Una ciutat ibera aliada de Roma. Un general cartaginès d'uns vint-i-huit anys. Vuit mesos de setge que canviarien el destí del Mediterrani.",
+    ("Una ciutat ibera aliada de Roma. Un general cartaginès d'uns vint-i-huit anys. Huit mesos de setge que canviarien el destí del Mediterrani.",
      "Una ciudad íbera aliada de Roma. Un general cartaginés de unos veintiocho años. Ocho meses de asedio que cambiarían el destino del Mediterráneo.",
      "An Iberian city allied with Rome. A Carthaginian general of about twenty-eight. Eight months of siege that would change the fate of the Mediterranean."),
     ("Veure el curt", "Ver el corto", "Watch the film"),
