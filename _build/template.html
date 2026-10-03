@@ -153,6 +153,7 @@ h2{margin:16px 0 0;font-family:var(--serif);font-weight:600;font-size:clamp(48px
 .credits span{display:block;color:var(--dim);font-family:var(--mono);font-size:10px;letter-spacing:.2em}
 .credits b{display:block;margin-top:6px;color:#e9dcc8;font-weight:500}
 .films-grid{margin-top:28px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.films-grid .card{display:flex;flex-direction:column}   /* un <button> centra el contingut: així totes les fitxes comencen dalt */
 .film__media{position:relative;aspect-ratio:16/10;overflow:hidden;background:#1c130e}
 .film__shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(21,14,10,.95) 0%,rgba(21,14,10,.2) 60%)}
 .film__num{position:absolute;right:18px;top:6px;font-family:var(--serif);font-size:96px;line-height:1;color:rgba(243,230,211,.14)}
@@ -386,11 +387,11 @@ dialog[open]{animation:fadeUp .6s var(--ease)}
     <div class="films-grid">
       <button type="button" class="card reveal" data-play="II" aria-label="Reproduir capítol II, Els Alps">
         <div class="film__media">
-          <picture><source type="image/avif" srcset="img/film-2-600.avif 600w, img/film-2-1000.avif 1000w" sizes="(max-width: 900px) 112vw, 37vw"><source type="image/webp" srcset="img/film-2-600.webp 600w, img/film-2-1000.webp 1000w" sizes="(max-width: 900px) 112vw, 37vw"><img class="poster" src="img/film-2-1000.jpg" srcset="img/film-2-600.jpg 600w, img/film-2-1000.jpg 1000w" sizes="(max-width: 900px) 112vw, 37vw" width="1000" height="563" alt="" loading="lazy" decoding="async" style="object-position:85% 40%"></picture>
+          <picture><source type="image/avif" srcset="img/film-2-600.avif 600w, img/film-2-1000.avif 1000w" sizes="(max-width: 900px) 112vw, 37vw"><source type="image/webp" srcset="img/film-2-600.webp 600w, img/film-2-1000.webp 1000w" sizes="(max-width: 900px) 112vw, 37vw"><img class="poster" src="img/film-2-1000.jpg" srcset="img/film-2-600.jpg 600w, img/film-2-1000.jpg 1000w" sizes="(max-width: 900px) 112vw, 37vw" width="1000" height="563" alt="" loading="lazy" decoding="async" style="object-position:40% 35%"></picture>
           <div class="film__shade"></div><div class="film__num">II</div><div class="tag glass">PRÒXIMAMENT</div>
           <span class="playbtn glass" style="left:18px;bottom:18px;width:52px;height:52px"><svg width="14" height="14" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5 L11 6 L3 10.5 Z" fill="currentColor"/></svg></span>
         </div>
-        <div class="film__body"><div class="kicker" style="font-size:11px;letter-spacing:.24em">218 aC — ELS ALPS</div><h3 style="font-size:30px">[TÍTOL DEL CAPÍTOL II]</h3><p>Elefants, neu i un exèrcit sencer creuant l'impossible cap a Itàlia.</p></div>
+        <div class="film__body"><div class="kicker" style="font-size:11px;letter-spacing:.24em">218 aC — ELS ALPS</div><h3 style="font-size:30px">Anníbal creua els Alps</h3><p>Més de quaranta-sis mil homes i els seus elefants deixen arrere el Roine. Quinze dies després, a la plana del Po, n'arriben com a molt vint-i-sis mil.</p></div>
       </button>
       <button type="button" class="card reveal" data-play="III" aria-label="Reproduir capítol III, Cannes">
         <div class="film__media">
