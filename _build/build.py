@@ -151,8 +151,6 @@ TR = [
     ("Fet. Et direm quan caiga Sagunt.", "Hecho. Te avisaremos cuando caiga Sagunto.", "Done. We’ll tell you when Saguntum falls."),
     # Peu i diàlegs
     ('aria-label="Xarxes"', 'aria-label="Redes"', 'aria-label="Social"'),
-    ("[CONTACTE]", "[CONTACTO]", "[CONTACT]"),
-    ("[PRODUCTORA]", "[PRODUCTORA]", "[PRODUCTION COMPANY]"),
     ('aria-label="Tancar"', 'aria-label="Cerrar"', 'aria-label="Close"'),
     ("[INSERIR VÍDEO]", "[INSERTAR VÍDEO]", "[INSERT VIDEO]"),
     ("Placeholder del reproductor 16:9", "Placeholder del reproductor 16:9", "16:9 player placeholder"),
