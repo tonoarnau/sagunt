@@ -141,14 +141,6 @@ TR = [
     ("Batalla de Cannes", "Batalla de Cannas", "Battle of Cannae"),
     ("Batalla de Zama", "Batalla de Zama", "Battle of Zama"),
     # Avisos
-    ("Que no et pille el foc desprevingut.", "Que el fuego no te pille desprevenido.", "Don’t let the fire catch you off guard."),
-    ("T'avisem quan s'estrene cada capítol. Cap correu més.",
-     "Te avisamos cuando se estrene cada capítulo. Ningún correo más.",
-     "We’ll let you know when each chapter premieres. Nothing else."),
-    ("Correu electrònic", "Correo electrónico", "Email address"),
-    ("el-teu@correu.cat", "tu@correo.es", "you@email.com"),
-    ("Avisa'm", "Avísame", "Notify me"),
-    ("Fet. Et direm quan caiga Sagunt.", "Hecho. Te avisaremos cuando caiga Sagunto.", "Done. We’ll tell you when Saguntum falls."),
     # Peu i diàlegs
     ('aria-label="Xarxes"', 'aria-label="Redes"', 'aria-label="Social"'),
     ('aria-label="Tancar"', 'aria-label="Cerrar"', 'aria-label="Close"'),
@@ -245,7 +237,7 @@ def build(lang):
     assert "<!--I18N_" not in s
     if lang != "ca":
         visible = re.sub(r"/\*.*?\*/|//[^\n]*|s-setge|#setge|#curts|id=\"setge\"|id=\"curts\"|class=\"setge|\.setge\{", "", s, flags=re.S)
-        leftovers = [w for w in ("setge", "Sagunt ", "curts", "capítol", "Anníbal", "Avisa'm", "Tancar") if w in visible]
+        leftovers = [w for w in ("setge", "Sagunt ", "curts", "capítol", "Anníbal", "Tancar") if w in visible]
         assert not leftovers, (lang, leftovers)
     out = ROOT / d / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)

@@ -207,15 +207,7 @@ h2{margin:16px 0 0;font-family:var(--serif);font-weight:600;font-size:clamp(48px
 .timeline span{display:block;margin-top:6px;font-size:15px;color:#e9dcc8}
 .timeline small{display:block;margin-top:4px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--dim)}
 .timeline li:first-child small{color:var(--fire-2)}
-.cta{position:relative;border-radius:28px;overflow:hidden;border:1px solid rgba(232,116,59,.3)}
 /* PERF: el desenfocament i l'enfosquiment ja venen "cuinats" a la imatge (5 KB), sense filter en temps real */
-.cta picture,.cta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 40%}
-.cta__shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,9,7,.95) 0%,rgba(13,9,7,.7) 55%,rgba(13,9,7,.35) 100%)}
-.cta__body{position:relative;padding:80px 64px;display:flex;flex-direction:column;gap:28px;max-width:720px}
-.cta h2{margin:0;font-size:clamp(40px,4.4vw,62px);line-height:1}
-.cta form{display:flex;gap:12px}
-.cta input{flex:1;min-height:56px;padding:0 22px;border-radius:999px;border:1px solid rgba(243,230,211,.25);background:rgba(13,9,7,.6);color:var(--text);font:400 15px var(--sans)}
-.cta input::placeholder{color:var(--dim)}
 .done{display:flex;align-items:center;gap:12px;min-height:56px;padding:0 20px;border-radius:999px;background:rgba(232,116,59,.16);color:#ffd2a8}
 footer{padding-top:40px;padding-bottom:56px;border-top:1px solid rgba(243,230,211,.08)}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--dim)}
@@ -277,8 +269,6 @@ dialog[open]{animation:fadeUp .6s var(--ease)}
   .still--a .still__cap{font-size:24px}
   .timeline{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:40px}
   .timeline::before{display:none}
-  .cta__body{padding:48px 24px}
-  .cta form{flex-direction:column}
   .hero__copy{padding-bottom:90px}
   .section{padding-top:96px;padding-bottom:80px}
 }
@@ -317,7 +307,6 @@ dialog[open]{animation:fadeUp .6s var(--ease)}
       <a class="navlink" href="#fotogrames">Fotogramas</a>
       <a class="navlink" href="#setge">El asedio</a>
       <a class="navlink" href="#cronologia">Cronología</a>
-      <a class="navlink" href="#avisos">Estreno</a>
     </nav>
     <div class="nav-right">
       <nav class="lang" aria-label="Idioma · Language"><a href="../" hreflang="ca" lang="ca" data-lang="ca" aria-label="Valencià">VAL</a><a href="../es/" hreflang="es" lang="es" data-lang="es" aria-label="Castellano" aria-current="page">ES</a><a href="../en/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a></nav>
@@ -468,26 +457,6 @@ dialog[open]{animation:fadeUp .6s var(--ease)}
   </div>
 </section>
 
-<!-- ================= CTA ================= -->
-<section id="avisos" class="pad cv" style="padding-top:40px;padding-bottom:120px">
-  <div class="wrap cta reveal">
-    <picture><source type="image/webp" srcset="../img/cta-1000.webp"><img src="../img/cta-1000.jpg" width="1000" height="563" alt="" loading="lazy" decoding="async"></picture>
-    <div class="cta__shade"></div>
-    <div class="cta__body">
-      <h2>Que el fuego no te pille desprevenido.</h2>
-      <p style="margin:0;font-size:16px;line-height:1.65;color:#d6c6b0">Te avisamos cuando se estrene cada capítulo. Ningún correo más.</p>
-      <form id="notify">
-        <label for="email" class="sr-only">Correo electrónico</label>
-        <input id="email" name="email" type="email" required placeholder="tu@correo.es" autocomplete="email">
-        <button type="submit" class="btn btn--fire">Avísame</button>
-      </form>
-      <div class="done" id="done" role="status" hidden>
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9.5 L7.5 14 L15 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Hecho. Te avisaremos cuando caiga Sagunto.
-      </div>
-    </div>
-  </div>
-</section>
 
 <footer class="pad cv" style="contain-intrinsic-size:auto 160px">
   <div class="wrap">
@@ -669,12 +638,6 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   setTimeout(() => document.body.appendChild(el), 2500);
 })();
 
-/* Formulari d'avisos (connecta'l a Formspree, Mailchimp, etc.) */
-document.getElementById('notify').addEventListener('submit', (e) => {
-  e.preventDefault();
-  e.target.hidden = true;
-  document.getElementById('done').hidden = false;
-});
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
