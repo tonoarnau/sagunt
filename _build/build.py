@@ -103,6 +103,7 @@ TR = [
     ("<b>Valencià</b>", "<b>Valenciano</b>", "<b>Valencian</b>"),
     ("JA DISPONIBLE", "YA DISPONIBLE", "OUT NOW"),
     ("PRÒXIMAMENT", "PRÓXIMAMENTE", "COMING SOON"),
+    (" · VEURE<", " · VER<", " · WATCH<"),
     ("Més de quaranta-sis mil homes i els seus elefants deixen arrere el Roine. Quinze dies després, a la plana del Po, n'arriben com a molt vint-i-sis mil.",
      "Más de cuarenta y seis mil hombres y sus elefantes dejan atrás el Ródano. Quince días después, a la llanura del Po llegan, como mucho, veintiséis mil.",
      "More than forty-six thousand men and their elephants leave the Rhône behind. Fifteen days later, at most twenty-six thousand reach the plain of the Po."),

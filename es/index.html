@@ -213,13 +213,16 @@ h2{text-wrap:balance}
 .fact span{display:block;margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:#c9b69c}
 .fact p{margin:16px 0 0;font-size:15px;line-height:1.65;color:#a8987f}
 .timeline{position:relative;margin:64px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
-.timeline::before{content:'';position:absolute;left:0;right:0;top:9px;height:1px;background:linear-gradient(90deg,var(--fire),rgba(243,230,211,.15))}
+.timeline::before{content:'';position:absolute;left:0;right:0;top:9px;height:1px;background:linear-gradient(90deg,var(--fire) 0,var(--fire) 30%,rgba(243,230,211,.15) 62%)}
 .dot{position:relative;display:block;width:19px;height:19px;border-radius:50%;background:var(--bg);border:1px solid var(--muted)}
 .dot--on{background:var(--fire);border:0;box-shadow:0 0 0 6px rgba(232,116,59,.18),0 0 24px rgba(232,116,59,.7)}
-.timeline b{display:block;margin-top:26px;font-family:var(--serif);font-size:40px;font-weight:500;color:var(--title)}
+.timeline b{display:block;margin-top:26px;font-family:var(--serif);font-size:40px;font-weight:500;color:var(--title);font-variant-numeric:lining-nums}
 .timeline span{display:block;margin-top:6px;font-size:15px;color:#e9dcc8}
 .timeline small{display:block;margin-top:4px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--dim)}
-.timeline li:first-child small{color:var(--fire-2)}
+.timeline li.on small{color:var(--fire-2)}
+.tl-play{all:unset;display:block;cursor:pointer;border-radius:12px}
+.tl-play:focus-visible{outline:2px solid var(--fire-2);outline-offset:8px}
+.tl-play:hover span{color:var(--fire-2)}
 /* PERF: el desenfocament i l'enfosquiment ja venen "cuinats" a la imatge (5 KB), sense filter en temps real */
 .done{display:flex;align-items:center;gap:12px;min-height:56px;padding:0 20px;border-radius:999px;background:rgba(232,116,59,.16);color:#ffd2a8}
 footer{padding-top:40px;padding-bottom:56px;border-top:1px solid rgba(243,230,211,.08)}
@@ -477,8 +480,8 @@ dialog[open]{animation:fadeUp .6s var(--ease)}
   <div class="wrap">
     <h2 class="reveal" style="margin:0;font-size:clamp(40px,4.6vw,64px)">Cronología de la saga</h2>
     <ol class="timeline reveal">
-      <li><i class="dot dot--on"></i><b>219 a. C.</b><span>Asedio de Sagunto</span><small>CAPÍTULO I</small></li>
-      <li><i class="dot"></i><b>218 a. C.</b><span>Travesía de los Alpes</span><small>CAPÍTULO II</small></li>
+      <li class="on"><button type="button" class="tl-play" data-play="I" aria-label="Reproducir capítulo I, Sagunto"><i class="dot dot--on"></i><b>219 a. C.</b><span>Asedio de Sagunto</span><small>CAPÍTULO I · VER</small></button></li>
+      <li class="on"><button type="button" class="tl-play" data-play="II" aria-label="Reproducir capítulo II, Los Alpes"><i class="dot dot--on"></i><b>218 a. C.</b><span>Travesía de los Alpes</span><small>CAPÍTULO II · VER</small></button></li>
       <li><i class="dot"></i><b>216 a. C.</b><span>Batalla de Cannas</span><small>CAPÍTULO III</small></li>
       <li><i class="dot"></i><b>202 a. C.</b><span>Batalla de Zama</span><small>CAPÍTULO IV</small></li>
     </ol>
