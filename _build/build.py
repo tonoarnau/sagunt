@@ -28,21 +28,40 @@ LANGS = {
 # (valencià, castellano, English) — els textos més llargs s'apliquen primer
 TR = [
     # <head>
-    ("Sagunt, 219 aC · Anníbal — Cròniques de foc",
-     "Sagunto, 219 a. C. · Aníbal — Crónicas de fuego",
-     "Saguntum, 219 BC · Hannibal — Chronicles of Fire"),
-    ("Curts cinematogràfics sobre Anníbal i la Segona Guerra Púnica. Capítol I: Sagunt, el setge que va encendre una guerra.",
-     "Cortometrajes cinematográficos sobre Aníbal y la Segunda Guerra Púnica. Capítulo I: Sagunto, el asedio que encendió una guerra.",
-     "Cinematic short films about Hannibal and the Second Punic War. Chapter I: Saguntum, the siege that ignited a war."),
-    ("Sagunt, 219 aC — El setge que va encendre una guerra",
-     "Sagunto, 219 a. C. — El asedio que encendió una guerra",
-     "Saguntum, 219 BC — The siege that ignited a war"),
-    ("Curts cinematogràfics sobre Anníbal i la Segona Guerra Púnica.",
-     "Cortometrajes cinematográficos sobre Aníbal y la Segunda Guerra Púnica.",
-     "Cinematic short films about Hannibal and the Second Punic War."),
+    ("Anníbal · Cròniques de foc — Sagunt i els Alps, història recreada amb IA",
+     "Aníbal · Crónicas de fuego — Sagunto y los Alpes, documental histórico con IA",
+     "Hannibal · Chronicles of Fire — Saguntum and the Alps, AI history documentary"),
+    ("Sèrie documental sobre Anníbal recreada amb IA i basada en Polibi i Titus Livi. Mira el setge de Sagunt (219 aC) i la travessa dels Alps amb elefants (218 aC).",
+     "Serie documental sobre Aníbal recreada con IA y basada en Polibio y Tito Livio. Mira el asedio de Sagunto (219 a. C.) y el cruce de los Alpes con elefantes (218 a. C.).",
+     "AI-recreated documentary series about Hannibal, based on Polybius and Livy. Watch the siege of Saguntum (219 BC) and the crossing of the Alps with elephants (218 BC)."),
+    ("Anníbal · Cròniques de foc — La Segona Guerra Púnica, recreada amb IA",
+     "Aníbal · Crónicas de fuego — La Segunda Guerra Púnica, recreada con IA",
+     "Hannibal · Chronicles of Fire — The Second Punic War, recreated with AI"),
+    ("Sèrie documental basada en les fonts antigues. Capítol I: Sagunt. Capítol II: Els Alps.",
+     "Serie documental basada en las fuentes antiguas. Capítulo I: Sagunto. Capítulo II: Los Alpes.",
+     "A documentary series based on the ancient sources. Chapter I: Saguntum. Chapter II: The Alps."),
+    ('content="Anníbal · Cròniques de foc"', 'content="Aníbal · Crónicas de fuego"', 'content="Hannibal · Chronicles of Fire"'),
     ("Anníbal, amb capa roja i armadura d'escates, davant del camp de Sagunt en flames",
      "Aníbal, con capa roja y armadura de escamas, ante el campo de Sagunto en llamas",
      "Hannibal, in a red cloak and scale armour, before the burning fields of Saguntum"),
+    # El projecte
+    ("EL PROJECTE", "EL PROYECTO", "THE PROJECT"),
+    ("Història documentada, recreada amb IA", "Historia documentada, recreada con IA", "Documented history, recreated with AI"),
+    ("Anníbal · Cròniques de foc és una sèrie documental sobre la Segona Guerra Púnica. Cada fet que s'hi conta ix de les fonts antigues; quan les fonts dubten o no coincideixen, la veu ho diu.",
+     "Aníbal · Crónicas de fuego es una serie documental sobre la Segunda Guerra Púnica. Cada hecho que se cuenta sale de las fuentes antiguas; cuando las fuentes dudan o no coinciden, la voz lo dice.",
+     "Hannibal · Chronicles of Fire is a documentary series about the Second Punic War. Every fact it tells comes from the ancient sources; when the sources are unsure or disagree, the narrator says so."),
+    ("FONTS PRIMÀRIES", "FUENTES PRIMARIAS", "PRIMARY SOURCES"),
+    ("Polibi i Titus Livi, contrastats frase a frase, amb la cita de cada xifra i de cada episodi dubtós.",
+     "Polibio y Tito Livio, contrastados frase a frase, con la cita de cada cifra y de cada episodio dudoso.",
+     "Polybius and Livy, checked line by line, with a citation for every figure and every disputed episode."),
+    ("RECREACIÓ AMB IA", "RECREACIÓN CON IA", "RECREATED WITH AI"),
+    ("Cada pla és una imatge generada amb IA a partir de les fonts i animada com una peça de cinema, amb música orquestral pròpia.",
+     "Cada plano es una imagen generada con IA a partir de las fuentes y animada como una pieza de cine, con música orquestal propia.",
+     "Every shot is an AI-generated image built from the sources and animated like a piece of cinema, with an original orchestral score."),
+    (">IDIOMES<", ">IDIOMAS<", ">LANGUAGES<"),
+    ("Narrat en valencià, amb subtítols en castellà i anglés a YouTube.",
+     "Narrado en valenciano, con subtítulos en castellano e inglés en YouTube.",
+     "Narrated in Valencian, with Spanish and English subtitles on YouTube."),
     # Navegació
     ('aria-label="Principal"', 'aria-label="Principal"', 'aria-label="Main"'),
     (">Els curts<", ">Los cortos<", ">The films<"),
@@ -182,6 +201,60 @@ def h1(word):
     return f'<h1 aria-label="{word}" style="--chars:{len(word)}">{spans}</h1>'
 
 
+# Dades estructurades (schema.org): productora, sèrie i un VideoObject per capítol publicat
+CANAL = "https://www.youtube.com/@historiasdeltiopipa"
+SERIE = {"ca": "Anníbal · Cròniques de foc", "es": "Aníbal · Crónicas de fuego", "en": "Hannibal · Chronicles of Fire"}
+DESC_SERIE = {
+    "ca": "Sèrie documental sobre Anníbal i la Segona Guerra Púnica, recreada amb IA a partir de Polibi i Titus Livi. Narrada en valencià.",
+    "es": "Serie documental sobre Aníbal y la Segunda Guerra Púnica, recreada con IA a partir de Polibio y Tito Livio. Narrada en valenciano, con subtítulos en castellano.",
+    "en": "Documentary series about Hannibal and the Second Punic War, recreated with AI from Polybius and Livy. Narrated in Valencian, with English subtitles."}
+VIDEOS = [  # id de YouTube, durada ISO, data de publicació, títol i descripció per idioma
+    ("1vzNUB1k7_s", "PT4M39S", "2026-10-04T06:43:04-07:00", 1,
+     {"ca": ("Anníbal assetja Sagunt (219 aC)", "Capítol I. Anníbal assetja la ciutat ibera de Sagunt, aliada de Roma, mentre Roma envia ambaixadors i no exèrcits. Quan Sagunt cau, comença la Segona Guerra Púnica."),
+      "es": ("Aníbal asedia Sagunto (219 a. C.)", "Capítulo I. Aníbal asedia la ciudad íbera de Sagunto, aliada de Roma, mientras Roma envía embajadores y no ejércitos. Cuando Sagunto cae, empieza la Segunda Guerra Púnica."),
+      "en": ("Hannibal besieges Saguntum (219 BC)", "Chapter I. Hannibal besieges the Iberian city of Saguntum, an ally of Rome, while Rome sends envoys, not armies. When Saguntum falls, the Second Punic War begins.")}),
+    ("qEE7YH02s3s", "PT6M36S", "2026-10-04T06:43:29-07:00", 2,
+     {"ca": ("Anníbal creua els Alps (218 aC)", "Capítol II. Més de quaranta-sis mil homes i els seus elefants deixen arrere el Roine. Quinze dies després, a la plana del Po, n'arriben com a molt vint-i-sis mil."),
+      "es": ("Aníbal cruza los Alpes (218 a. C.)", "Capítulo II. Más de cuarenta y seis mil hombres y sus elefantes dejan atrás el Ródano. Quince días después, a la llanura del Po llegan, como mucho, veintiséis mil."),
+      "en": ("Hannibal crosses the Alps (218 BC)", "Chapter II. More than forty-six thousand men and their elephants leave the Rhône behind. Fifteen days later, at most twenty-six thousand reach the plain of the Po.")}),
+]
+
+
+def ld(lang, url):
+    import json
+    org = {"@type": "Organization", "@id": BASE_URL + "#productora", "name": "Historias del tío Pipa", "url": CANAL,
+           "logo": BASE_URL + "img/og.jpg",
+           "sameAs": [CANAL, "https://www.instagram.com/historiasdeltiopipa"]}
+    serie = {"@type": "CreativeWorkSeries", "@id": BASE_URL + "#serie", "name": SERIE[lang], "description": DESC_SERIE[lang],
+             "url": url, "inLanguage": "ca", "genre": ["Documental", "Història"] if lang != "en" else ["Documentary", "History"],
+             "about": [{"@type": "Person", "name": {"ca": "Anníbal", "es": "Aníbal", "en": "Hannibal"}[lang]},
+                       {"@type": "Event", "name": {"ca": "Segona Guerra Púnica", "es": "Segunda Guerra Púnica", "en": "Second Punic War"}[lang]}],
+             "creator": {"@id": BASE_URL + "#productora"}, "image": BASE_URL + "img/og.jpg"}
+    videos = []
+    for vid, dur, data, n, txt in VIDEOS:
+        nom, desc = txt[lang]
+        videos.append({"@type": "VideoObject", "@id": f"{BASE_URL}#capitol-{n}", "name": f"{nom} · {SERIE[lang]}", "description": desc,
+                       "thumbnailUrl": [f"https://i.ytimg.com/vi/{vid}/maxresdefault.jpg"], "uploadDate": data, "duration": dur,
+                       "contentUrl": f"https://www.youtube.com/watch?v={vid}", "embedUrl": f"https://www.youtube.com/embed/{vid}",
+                       "inLanguage": "ca", "isPartOf": {"@id": BASE_URL + "#serie"}, "publisher": {"@id": BASE_URL + "#productora"},
+                       "position": n})
+    pagina = {"@type": "WebPage", "@id": url, "url": url, "name": SERIE[lang], "description": DESC_SERIE[lang], "inLanguage": LANGS[lang][1],
+              "isPartOf": {"@type": "WebSite", "@id": BASE_URL + "#web", "url": BASE_URL, "name": SERIE[lang]},
+              "about": {"@id": BASE_URL + "#serie"}, "primaryImageOfPage": BASE_URL + "img/og.jpg",
+              "video": [{"@id": v["@id"]} for v in videos]}
+    data = {"@context": "https://schema.org", "@graph": [pagina, org, serie] + videos}
+    return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "</script>"
+
+
+def sitemap():
+    alts = "".join(f'<xhtml:link rel="alternate" hreflang="{LANGS[o][1]}" href="{BASE_URL}{LANGS[o][0]}"/>' for o in LANGS)
+    alts += f'<xhtml:link rel="alternate" hreflang="x-default" href="{BASE_URL}"/>'
+    urls = "".join(f"<url><loc>{BASE_URL}{LANGS[l][0]}</loc>{alts}</url>" for l in LANGS)
+    (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+                                      f'xmlns:xhtml="http://www.w3.org/1999/xhtml">{urls}</urlset>\n', encoding="utf-8")
+    print("✓ sitemap.xml")
+
+
 def build(lang):
     d, html_lang, locale, _, _, word = LANGS[lang]
     s = TEMPLATE
@@ -198,7 +271,9 @@ def build(lang):
     head += [f'<meta property="og:locale:alternate" content="{LANGS[o][2]}">' for o in LANGS if o != lang]
     head += [f'<link rel="alternate" hreflang="{LANGS[o][1]}" href="{BASE_URL}{LANGS[o][0]}">' for o in LANGS]
     head.append(f'<link rel="alternate" hreflang="x-default" href="{BASE_URL}">')
+    head += [f'<link rel="canonical" href="{BASE_URL}{d}">', f'<meta property="og:url" content="{BASE_URL}{d}">']
     s = s.replace("<!--I18N_HEAD-->", "\n".join(head), 1)
+    s = s.replace("<!--I18N_LD-->", ld(lang, BASE_URL + d), 1)
 
     current = ' aria-current="page"'
     links = "".join(
@@ -247,3 +322,4 @@ def build(lang):
 if __name__ == "__main__":
     for l in LANGS:
         build(l)
+    sitemap()
