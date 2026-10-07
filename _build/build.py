@@ -77,6 +77,14 @@ TR = [
      "Una ciudad íbera aliada de Roma. Un general cartaginés de unos veintiocho años. Ocho meses de asedio que cambiarían el destino del Mediterráneo.",
      "An Iberian city allied with Rome. A Carthaginian general of about twenty-eight. Eight months of siege that would change the fate of the Mediterranean."),
     ("Veure el curt", "Ver el corto", "Watch the film"),
+    # Carrusel de l'hero
+    ("La columna d'Anníbal puja en fila per un vessant nevat dels Alps, a contrallum, sobre un mar de núvols",
+     "La columna de Aníbal sube en fila por una ladera nevada de los Alpes, a contraluz, sobre un mar de nubes",
+     "Hannibal's column climbs in single file up a snowy slope of the Alps, against the light, above a sea of clouds"),
+    ("Pausar el carrusel", "Pausar el carrusel", "Pause the slideshow"),
+    ("Reprendre el carrusel", "Reanudar el carrusel", "Resume the slideshow"),
+    ("Capítol I, Sagunt", "Capítulo I, Sagunto", "Chapter I, Saguntum"),
+    ("Capítol II, Els Alps", "Capítulo II, Los Alpes", "Chapter II, The Alps"),
     ("Tots els capítols", "Todos los capítulos", "All chapters"),
     ("VAL · SUBT. ES/EN", "V.O. VALENCIANO · SUBT. ES/EN", "VALENCIAN · ES/EN SUBS"),
     ("Baixar als curts", "Bajar a los cortos", "Scroll to the films"),
@@ -195,11 +203,16 @@ def rel(frm, to):
     return (up + LANGS[to][0]) or "./"
 
 
-def h1(word):
+def h1(word, tag="h1"):
     spans = "".join(
-        f'<span class="letter" aria-hidden="true" style="animation-delay:{0.55 + i * 0.04:.2f}s">{c}</span>'
+        f'<span class="letter" aria-hidden="true" style="animation-delay:{0.55 + i * 0.04:.2f}s">{"&nbsp;" if c == " " else c}</span>'
         for i, c in enumerate(word))
-    return f'<h1 aria-label="{word}" style="--chars:{len(word)}">{spans}</h1>'
+    cls = "" if tag == "h1" else ' class="htitle"'  # la segona diapositiva: mateix aspecte, però un sol <h1> a la pàgina
+    return f'<{tag}{cls} aria-label="{word}" style="--chars:{len(word)}">{spans}</{tag}>'
+
+
+# títol gran de la segona diapositiva del carrusel
+ALPS = {"ca": "Els Alps", "es": "Los Alpes", "en": "The Alps"}
 
 
 # Dades estructurades (schema.org): productora, sèrie i un VideoObject per capítol publicat
@@ -228,8 +241,12 @@ def ld(lang, url):
            "sameAs": [CANAL, "https://www.instagram.com/historiasdeltiopipa"]}
     serie = {"@type": "CreativeWorkSeries", "@id": BASE_URL + "#serie", "name": SERIE[lang], "description": DESC_SERIE[lang],
              "url": url, "inLanguage": "ca", "genre": ["Documental", "Història"] if lang != "en" else ["Documentary", "History"],
-             "about": [{"@type": "Person", "name": {"ca": "Anníbal", "es": "Aníbal", "en": "Hannibal"}[lang]},
-                       {"@type": "Event", "name": {"ca": "Segona Guerra Púnica", "es": "Segunda Guerra Púnica", "en": "Second Punic War"}[lang]}],
+             # La guerra va com a Thing i no com a Event: Google valida qualsevol Event com un esdeveniment
+             # amb entrades (startDate, location, offers...) i Search Console ho marcava com a error.
+             "about": [{"@type": "Person", "name": {"ca": "Anníbal", "es": "Aníbal", "en": "Hannibal"}[lang],
+                        "sameAs": "https://en.wikipedia.org/wiki/Hannibal"},
+                       {"@type": "Thing", "name": {"ca": "Segona Guerra Púnica", "es": "Segunda Guerra Púnica", "en": "Second Punic War"}[lang],
+                        "sameAs": "https://en.wikipedia.org/wiki/Second_Punic_War"}],
              "creator": {"@id": BASE_URL + "#productora"}, "image": BASE_URL + "img/og.jpg"}
     videos = []
     for vid, dur, data, n, txt in VIDEOS:
@@ -283,6 +300,7 @@ def build(lang):
         for o in LANGS)
     s = s.replace("<!--I18N_SWITCH-->", f'      <nav class="lang" aria-label="Idioma · Language">{links}</nav>', 1)
     s = s.replace("<!--I18N_H1-->", h1(word), 1)
+    s = s.replace("<!--I18N_H1_ALPS-->", h1(ALPS[lang], "p"), 1)
 
     tips = {o: {"msg": TIP[o][0], "cta": TIP[o][1], "href": rel(lang, o)} for o in LANGS if o != lang}
     script = f"""/* Idioma: recorda l'elecció i suggereix (sense redirigir) la versió del navegador */
