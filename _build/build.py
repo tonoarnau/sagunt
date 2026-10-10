@@ -28,18 +28,18 @@ LANGS = {
 # (valencià, castellano, English) — els textos més llargs s'apliquen primer
 TR = [
     # <head>
-    ("Anníbal · Cròniques de foc — Sagunt i els Alps, història recreada amb IA",
-     "Aníbal · Crónicas de fuego — Sagunto y los Alpes, documental histórico con IA",
-     "Hannibal · Chronicles of Fire — Saguntum and the Alps, AI history documentary"),
-    ("Sèrie documental sobre Anníbal recreada amb IA i basada en Polibi i Titus Livi. Mira el setge de Sagunt (219 aC) i la travessa dels Alps amb elefants (218 aC).",
-     "Serie documental sobre Aníbal recreada con IA y basada en Polibio y Tito Livio. Mira el asedio de Sagunto (219 a. C.) y el cruce de los Alpes con elefantes (218 a. C.).",
-     "AI-recreated documentary series about Hannibal, based on Polybius and Livy. Watch the siege of Saguntum (219 BC) and the crossing of the Alps with elephants (218 BC)."),
+    ("Anníbal · Cròniques de foc — Sagunt, els Alps i Cannes, història recreada amb IA",
+     "Aníbal · Crónicas de fuego — Sagunto, los Alpes y Cannas, documental histórico con IA",
+     "Hannibal · Chronicles of Fire — Saguntum, the Alps and Cannae, AI history documentary"),
+    ("Sèrie documental sobre Anníbal recreada amb IA i basada en Polibi i Titus Livi. Mira el setge de Sagunt (219 aC), la travessa dels Alps amb elefants (218 aC) i la batalla de Cannes (216 aC).",
+     "Serie documental sobre Aníbal recreada con IA y basada en Polibio y Tito Livio. Mira el asedio de Sagunto (219 a. C.), el cruce de los Alpes con elefantes (218 a. C.) y la batalla de Cannas (216 a. C.).",
+     "AI-recreated documentary series about Hannibal, based on Polybius and Livy. Watch the siege of Saguntum (219 BC), the crossing of the Alps with elephants (218 BC) and the Battle of Cannae (216 BC)."),
     ("Anníbal · Cròniques de foc — La Segona Guerra Púnica, recreada amb IA",
      "Aníbal · Crónicas de fuego — La Segunda Guerra Púnica, recreada con IA",
      "Hannibal · Chronicles of Fire — The Second Punic War, recreated with AI"),
-    ("Sèrie documental basada en les fonts antigues. Capítol I: Sagunt. Capítol II: Els Alps.",
-     "Serie documental basada en las fuentes antiguas. Capítulo I: Sagunto. Capítulo II: Los Alpes.",
-     "A documentary series based on the ancient sources. Chapter I: Saguntum. Chapter II: The Alps."),
+    ("Sèrie documental basada en les fonts antigues. Capítol I: Sagunt. Capítol II: Els Alps. Capítol III: Cannes.",
+     "Serie documental basada en las fuentes antiguas. Capítulo I: Sagunto. Capítulo II: Los Alpes. Capítulo III: Cannas.",
+     "A documentary series based on the ancient sources. Chapter I: Saguntum. Chapter II: The Alps. Chapter III: Cannae."),
     ('content="Anníbal · Cròniques de foc"', 'content="Aníbal · Crónicas de fuego"', 'content="Hannibal · Chronicles of Fire"'),
     ("Anníbal, amb capa roja i armadura d'escates, davant del camp de Sagunt en flames",
      "Aníbal, con capa roja y armadura de escamas, ante el campo de Sagunto en llamas",
@@ -103,6 +103,11 @@ TR = [
     ("Reproduir capítol III, Cannes", "Reproducir capítulo III, Cannas", "Play chapter III, Cannae"),
     ("Reproduir capítol IV, Zama", "Reproducir capítulo IV, Zama", "Play chapter IV, Zama"),
     ("ESTRENA · 4 OCT. 2026", "ESTRENO · 4 OCT. 2026", "PREMIERE · 4 OCT 2026"),
+    ("ESTRENA · 16 OCT. 2026 · 5:04", "ESTRENO · 16 OCT. 2026 · 5:04", "PREMIERE · 16 OCT 2026 · 5:04"),
+    ("Anníbal i la batalla de Cannes", "Aníbal y la batalla de Cannas", "Hannibal and the Battle of Cannae"),
+    ("Roma posa en camp huit legions, «una cosa que no s'havia fet mai», segons Polibi. Al vespre, l'exèrcit romà ja no existix.",
+     "Roma pone en campaña ocho legiones, «algo que nunca se había hecho», según Polibio. Al anochecer, el ejército romano ya no existe.",
+     "Rome puts eight legions in the field, \"a thing which had never been done before\", according to Polybius. By nightfall, the Roman army no longer exists."),
     ("Anníbal assetja la ciutat ibera mentre Roma envia ambaixadors i no exèrcits. Quan Sagunt cau, ja no hi ha volta enrere.",
      "Aníbal asedia la ciudad íbera mientras Roma envía embajadores y no ejércitos. Cuando Sagunto cae, ya no hay vuelta atrás.",
      "Hannibal besieges the Iberian city while Rome sends envoys, not armies. When Saguntum falls, there is no turning back."),
@@ -231,6 +236,10 @@ VIDEOS = [  # id de YouTube, durada ISO, data de publicació, títol i descripci
      {"ca": ("Anníbal creua els Alps (218 aC)", "Capítol II. Més de quaranta-sis mil homes i els seus elefants deixen arrere el Roine. Quinze dies després, a la plana del Po, n'arriben com a molt vint-i-sis mil."),
       "es": ("Aníbal cruza los Alpes (218 a. C.)", "Capítulo II. Más de cuarenta y seis mil hombres y sus elefantes dejan atrás el Ródano. Quince días después, a la llanura del Po llegan, como mucho, veintiséis mil."),
       "en": ("Hannibal crosses the Alps (218 BC)", "Chapter II. More than forty-six thousand men and their elephants leave the Rhône behind. Fifteen days later, at most twenty-six thousand reach the plain of the Po.")}),
+    ("EZ8KpRyL_sM", "PT5M4S", "2026-10-16", 3,
+     {"ca": ("Anníbal i la batalla de Cannes (216 aC)", "Capítol III. A la plana de Cannes, Roma posa en camp huit legions, «una cosa que no s'havia fet mai», segons Polibi. Davant, uns cinquanta mil homes d'Anníbal. Al vespre, l'exèrcit romà ja no existix."),
+      "es": ("Aníbal y la batalla de Cannas (216 a. C.)", "Capítulo III. En la llanura de Cannas, Roma pone en campaña ocho legiones, «algo que nunca se había hecho», según Polibio. Enfrente, unos cincuenta mil hombres de Aníbal. Al anochecer, el ejército romano ya no existe."),
+      "en": ("Hannibal and the Battle of Cannae (216 BC)", "Chapter III. On the plain of Cannae, Rome puts eight legions in the field, \"a thing which had never been done before\", according to Polybius. Facing them, some fifty thousand of Hannibal's men. By nightfall, the Roman army no longer exists.")}),
 ]
 
 
@@ -265,11 +274,32 @@ def ld(lang, url):
 
 
 def sitemap():
+    """Una URL per idioma, amb hreflang, data de l'última modificació (la del build) i els vídeos publicats en extensió de
+    vídeo de Google (miniatura, títol, descripció, reproductor, durada i data) en l'idioma de cada pàgina."""
+    import datetime, html, re as _re
+    avui = datetime.date.today().isoformat()
     alts = "".join(f'<xhtml:link rel="alternate" hreflang="{LANGS[o][1]}" href="{BASE_URL}{LANGS[o][0]}"/>' for o in LANGS)
     alts += f'<xhtml:link rel="alternate" hreflang="x-default" href="{BASE_URL}"/>'
-    urls = "".join(f"<url><loc>{BASE_URL}{LANGS[l][0]}</loc>{alts}</url>" for l in LANGS)
+
+    def segons(iso):
+        m = _re.match(r"PT(?:(\d+)M)?(?:(\d+)S)?", iso)
+        return int(m.group(1) or 0) * 60 + int(m.group(2) or 0)
+
+    def videos(lang):
+        out = ""
+        for vid, dur, data, n, txt in VIDEOS:
+            nom, desc = (html.escape(x) for x in txt[lang])
+            out += (f"<video:video><video:thumbnail_loc>https://i.ytimg.com/vi/{vid}/maxresdefault.jpg</video:thumbnail_loc>"
+                    f"<video:title>{nom}</video:title><video:description>{desc}</video:description>"
+                    f"<video:player_loc>https://www.youtube.com/embed/{vid}</video:player_loc>"
+                    f"<video:duration>{segons(dur)}</video:duration><video:publication_date>{data}</video:publication_date>"
+                    f"<video:family_friendly>yes</video:family_friendly></video:video>")
+        return out
+
+    urls = "".join(f"<url><loc>{BASE_URL}{LANGS[l][0]}</loc><lastmod>{avui}</lastmod>{alts}{videos(l)}</url>" for l in LANGS)
     (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
-                                      f'xmlns:xhtml="http://www.w3.org/1999/xhtml">{urls}</urlset>\n', encoding="utf-8")
+                                      'xmlns:xhtml="http://www.w3.org/1999/xhtml" '
+                                      f'xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">{urls}</urlset>\n', encoding="utf-8")
     print("✓ sitemap.xml")
 
 
