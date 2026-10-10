@@ -13,7 +13,7 @@ import re
 from pathlib import Path
 
 # ⚠️ Canvia-ho per l'adreça real quan publiques a GitHub Pages (acaba en /)
-BASE_URL = "https://tonoarnau.github.io/sagunt/"
+BASE_URL = "https://historiasdeltiopipa.github.io/sagunt/"
 
 ROOT = Path(__file__).resolve().parent.parent
 TEMPLATE = (ROOT / "_build" / "template.html").read_text(encoding="utf-8")
