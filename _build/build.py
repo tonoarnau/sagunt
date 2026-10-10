@@ -85,6 +85,10 @@ TR = [
     ("Reprendre el carrusel", "Reanudar el carrusel", "Resume the slideshow"),
     ("Capítol I, Sagunt", "Capítulo I, Sagunto", "Chapter I, Saguntum"),
     ("Capítol II, Els Alps", "Capítulo II, Los Alpes", "Chapter II, The Alps"),
+    ("Capítol III, Cannes", "Capítulo III, Cannas", "Chapter III, Cannae"),
+    ("Anníbal, d'esquena i amb capa granat, contempla la plana de Cannes al capvespre, sembrada d'escuts",
+     "Aníbal, de espaldas y con capa granate, contempla la llanura de Cannas al atardecer, sembrada de escudos",
+     "Hannibal, seen from behind in a crimson cloak, looks out over the plain of Cannae at sunset, strewn with shields"),
     ("Tots els capítols", "Todos los capítulos", "All chapters"),
     ("VAL · SUBT. ES/EN", "V.O. VALENCIANO · SUBT. ES/EN", "VALENCIAN · ES/EN SUBS"),
     ("Baixar als curts", "Bajar a los cortos", "Scroll to the films"),
@@ -218,6 +222,7 @@ def h1(word, tag="h1"):
 
 # títol gran de la segona diapositiva del carrusel
 ALPS = {"ca": "Els Alps", "es": "Los Alpes", "en": "The Alps"}
+CANNES = {"ca": "Cannes", "es": "Cannas", "en": "Cannae"}
 
 
 # Dades estructurades (schema.org): productora, sèrie i un VideoObject per capítol publicat
@@ -331,6 +336,7 @@ def build(lang):
     s = s.replace("<!--I18N_SWITCH-->", f'      <nav class="lang" aria-label="Idioma · Language">{links}</nav>', 1)
     s = s.replace("<!--I18N_H1-->", h1(word), 1)
     s = s.replace("<!--I18N_H1_ALPS-->", h1(ALPS[lang], "p"), 1)
+    s = s.replace("<!--I18N_H1_C3-->", h1(CANNES[lang], "p"), 1)
 
     tips = {o: {"msg": TIP[o][0], "cta": TIP[o][1], "href": rel(lang, o)} for o in LANGS if o != lang}
     script = f"""/* Idioma: recorda l'elecció i suggereix (sense redirigir) la versió del navegador */
